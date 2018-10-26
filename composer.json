@@ -15,7 +15,12 @@
         }
     ],
     "require": {
-        "php" : "^7.1"
+        "php" : "^7.1",
+        "webservco/framework" : "@dev",
+        "webservco/api" : "@dev"
+    },
+    "require-dev" : {
+        "phpunit/phpunit" : "~4|~5"
     },
     "suggest" : {
         "pds/skeleton" : "A standard filesystem skeleton suitable for all PHP packages.",
@@ -28,6 +33,8 @@
         }
     },
     "scripts" : {
+        "test" : "vendor/bin/phpunit --colors=always",
+        "test:d" : "vendor/bin/phpunit --testdox",
         "check:structure" : "pds-skeleton validate .",
         "check" : "phpcs --standard=PSR2 --extensions=php src public",
         "s:7": "phpstan analyse src --level=7 --ansi -c phpstan.neon",

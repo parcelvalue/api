@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php" : "^7.1",
+        "php" : "^7.1"
     },
     "suggest" : {
         "pds/skeleton" : "A standard filesystem skeleton suitable for all PHP packages.",

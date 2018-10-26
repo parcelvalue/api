@@ -1,6 +1,7 @@
 <?php
 namespace Tests\Api\JsonApi;
 
+use ParcelValue\Api\JsonApi\ResourceObject;
 use PHPUnit\Framework\TestCase;
 
 final class ResourceObjectTest extends TestCase
@@ -10,7 +11,7 @@ final class ResourceObjectTest extends TestCase
      */
     public function constantTypeTestHasExpectedValue()
     {
-        $this->assertEquals('test', \ParcelValue\Api\JsonApi\ResourceObject::TYPE_TEST);
+        $this->assertEquals('test', ResourceObject::TYPE_TEST);
     }
 
     /**
@@ -18,6 +19,6 @@ final class ResourceObjectTest extends TestCase
      */
     public function constantTypeClientHasExpectedValue()
     {
-        $this->assertEquals('test', \ParcelValue\Api\JsonApi\ResourceObject::TYPE_CLIENT);
+        $this->assertEquals('client', ResourceObject::TYPE_CLIENT);
     }
 }

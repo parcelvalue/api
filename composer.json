@@ -1,0 +1,37 @@
+{
+    "name" : "parcelvalue/api",
+    "type" : "library",
+    "description" : "ParcelValue API",
+    "keywords" : [
+        "parcelvalue",
+        "api"
+    ],
+    "homepage" : "https://github.com/parcelvalue/api",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Radu Maier",
+            "email" : "ariademur@webserv.co"
+        }
+    ],
+    "require": {
+        "php" : "^7.1",
+    },
+    "suggest" : {
+        "pds/skeleton" : "A standard filesystem skeleton suitable for all PHP packages.",
+        "squizlabs/php_codesniffer" : "Detects violations of a defined set of coding standards.",
+        "phpstan/phpstan" : "PHP Static Analysis Tool, when using PHP 7.x"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "ParcelValue\\" : "src/ParcelValue/"
+        }
+    },
+    "scripts" : {
+        "check:structure" : "pds-skeleton validate .",
+        "check" : "phpcs --standard=PSR2 --extensions=php src public",
+        "s:7": "phpstan analyse src --level=7 --ansi -c phpstan.neon",
+        "all": "clear && composer s:7 && composer check",
+        "check:devel": "grep -rnF 'XXX' src"
+    }
+}

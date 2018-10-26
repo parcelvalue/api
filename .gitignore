@@ -1,0 +1,4 @@
+vendor/
+
+# Configuration
+composer.lock

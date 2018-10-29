@@ -1,0 +1,15 @@
+<?php
+namespace Tests\Api\JsonApi\ResourceObjects;
+
+use PHPUnit\Framework\TestCase;
+
+final class ShipmentTest extends TestCase
+{
+    /**
+     * @test
+     */
+    public function constantTypeHasExpectedValue()
+    {
+        $this->assertEquals('shipment', \ParcelValue\Api\JsonApi\ResourceObjects\Shipment::TYPE);
+    }
+}

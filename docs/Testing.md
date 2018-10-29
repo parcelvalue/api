@@ -6,15 +6,39 @@ Some examples:
 [Restlet Client](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm  ) (Google Chrome)  
 [RESTClient](https://addons.mozilla.org/en-US/firefox/addon/restclient/) (Mozilla Firefox)
 
-## Public access point (test sending values)
+## Test authentication
+Access point: `/clients/current`  
+Methods : `GET`, `HEAD`
 
-Methods : `GET`, `POST`
+```
+GET /v999/clients/current HTTP/1.1
+Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
+Host: api.parcelvalue.eu
+
+HTTP/1.1 200 OK
+Date: Fri, 26 Oct 2018 09:13:33 GMT
+Server: Apache
+Content-length: 103
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/vnd.api+json; charset=utf-8
+
+{"jsonapi":{"version":"1.0"},"data":{"type":"client","id":"<clientId>","attributes":{"name":"<clientName>"}}}
+```
+
+---
+
+## Test sending values to the API
+Access point: `/test`  
+Methods : `GET`, `HEAD`, `POST`
 
 ## Simple test
 
 ```
 GET /v999/test HTTP/1.1
 Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 200 OK
@@ -33,6 +57,7 @@ Content-Type: application/vnd.api+json; charset=utf-8
 ```
 GET /v999/test/13 HTTP/1.1
 Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 200 OK
@@ -51,6 +76,7 @@ Content-Type: application/vnd.api+json; charset=utf-8
 ```
 GET /v999/test/?key1=value1&key2=value2 HTTP/1.1
 Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 200 OK
@@ -69,6 +95,7 @@ Content-Type: application/vnd.api+json; charset=utf-8
 ```
 POST /v999/test/13 HTTP/1.1
 Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
 Content-Length: 23
 Host: api.parcelvalue.eu
 Content-Type: application/x-www-form-urlencoded
@@ -84,24 +111,4 @@ Connection: Keep-Alive
 Content-Type: application/vnd.api+json; charset=utf-8
 
 {"jsonapi":{"version":"1.0"},"data":{"type":"test","id":"13","attributes":{"method":"POST","data":{"key1":"value1","key2":"value2"}}}}
-```
----
-
-## Private access point (requires authentication)
-
-```
-GET /v999/clients/current HTTP/1.1
-Accept: application/vnd.api+json
-Authorization: Bearer <JWT>
-Host: api.parcelvalue.eu
-
-HTTP/1.1 200 OK
-Date: Fri, 26 Oct 2018 09:13:33 GMT
-Server: Apache
-Content-length: 103
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/vnd.api+json; charset=utf-8
-
-{"jsonapi":{"version":"1.0"},"data":{"type":"client","id":"<clientId>","attributes":{"name":"<clientName>"}}}
 ```

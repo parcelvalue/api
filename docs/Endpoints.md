@@ -1,4 +1,4 @@
-# Access points
+# Endpoints
 
 ## Testing
 ### `/test`

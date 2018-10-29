@@ -7,7 +7,7 @@ Some examples:
 [RESTClient](https://addons.mozilla.org/en-US/firefox/addon/restclient/) (Mozilla Firefox)
 
 ## Test authentication
-Access point: `/clients/current`  
+Endpoint: `/clients/current`  
 Methods : `GET`, `HEAD`
 
 ```
@@ -30,7 +30,7 @@ Content-Type: application/vnd.api+json; charset=utf-8
 ---
 
 ## Test sending values to the API
-Access point: `/test`  
+Endpoint: `/test`  
 Methods : `GET`, `HEAD`, `POST`
 
 ## Simple test

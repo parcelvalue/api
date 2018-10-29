@@ -19,7 +19,7 @@ Check your account for the Client Key and Server Key needed for API authenticati
 
 * [Content type](docs/ContentType.md)
 * [Authentication](docs/Authentication.md)
-* [Access points](docs/AccessPoints.md)
+* [Endpoints](docs/Endpoints.md)
 * [Testing the API](docs/Testing.md)
 
 ## Project documentation

@@ -1,9 +1,9 @@
 <?php
 namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
-class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
+class Test extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    const TYPE = 'shipment';
+    const TYPE = 'test';
 
     public function __construct($id = null)
     {

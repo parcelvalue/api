@@ -20,7 +20,7 @@ Methods : `POST`
 
 Create a new shipment.
 
-#### Data
+#### Request data
 
 | Name     | Description | Type              | Format                | Restrictions |
 |----------|-------------|-------------------|-----------------------|--------------|

@@ -2,7 +2,7 @@
 
 ## Install
 ```
-git clone git@github.com:parcelvalue/api.git
+git clone https://github.com/parcelvalue/api.git
 cd api
 composer update
 ```
@@ -30,4 +30,9 @@ composer test
 ### Run unit tests (testdox output)
 ```
 composer test:d
+```
+
+## Run all checks
+```
+composer all
 ```

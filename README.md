@@ -13,9 +13,17 @@ ParcelValue API
 Before using the API please make sure you have an account set up and can log in to the [ParcelValue client area](https://my.parcelvalue.eu).  
 Check your account for the Client Key and Server Key needed for API authentication.
 
-## Documentation
+---
+
+## ParcelValue API documentation
 
 * [Content type](docs/ContentType.md)
 * [Authentication](docs/Authentication.md)
 * [Access points](docs/AccessPoints.md)
 * [Testing the API](docs/Testing.md)
+
+## Project documentation
+
+This project contains the API documentation.  
+The project code is only required by the [ParcelValue API client](https://github.com/parcelvalue/api-client), so a standalone installation is not required.  
+For code checking and validation, please see the [Developer installation information](docs/DeveloperInstallation.md)

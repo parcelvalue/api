@@ -22,30 +22,56 @@ Create a new shipment.
 
 #### Request data
 
-| Name     | Description | Type              | Format                | Restrictions |
-|----------|-------------|-------------------|-----------------------|--------------|
-| shipment | Shipment    | `shipment` object | Please see `shipment` | required     |
+| Name     | Description | Type              | Format | Restrictions |
+|----------|-------------|-------------------|--------|--------------|
+| shipment | Shipment    | `shipment` object |        | required     |
 
-##### `shipment`
+##### `shipment` object structure
 
-| Name       | Description      | Type   | Format               | Restrictions |
-|------------|------------------|--------|----------------------|--------------|
-| `shipFrom` | Sender address   | object | please see `address` | required     |
-| `shipTo`   | Receiver address | object | please see `address` | required     |
+| Name       | Description                   | Type             | Format | Restrictions |
+|------------|-------------------------------|------------------|--------|--------------|
+| `shipFrom` | Sender address                | `address` object |        | required     |
+| `shipTo`   | Receiver address              | `address` object |        | required     |
+| `packages` | One or more `package` objects | `package` object |        | required     |
 
-##### `address`
-| Name         | Description          | Type   | Format                            | Restrictions |
-|--------------|----------------------|--------|-----------------------------------|--------------|
-| `name`       | Name                 | string | String with no special characters | required     |
-| `address1`   | Address              | string | String with no special characters | required     |
-| `city`       | City                 | string | String with no special characters | required     |
-| `postalCode` | Postal code          | string |                                   | required     |
-| `state`      | State / province     | string | 2 letter ISO Alpha-2 code         | required (¹) |
-| `country`    | Country              | string | 2 letter ISO Alpha-2 code         | required     |
-| `contact`    | Contact name         | string | String with no special characters | required     |
-| `phone`      | Contact phone number | string |                                   | optional (²) |
-| `email`      | Contact email        | string |                                   | required (³) |
+##### `address` object  structure
+| Name         | Description          | Type   | Format                                            | Restrictions |
+|--------------|----------------------|--------|---------------------------------------------------|--------------|
+| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     |
+| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     |
+| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     |
+| `postalCode` | Postal code          | string |                                                   | required     |
+| `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) |
+| `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     |
+| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     |
+| `phone`      | Contact phone number | number | (²)(³)                                            | optional     |
+| `email`      | Contact email        | string |                                                   | required (⁵) |
 
-(¹) `state` is required only for the following countries: IT, CA, US;  
+##### `package` object  structure
+| Name          | Description        | Type                | Format                              | Restrictions |
+|---------------|--------------------|---------------------|-------------------------------------|--------------|
+| `weight`      | Package weight     | `weight` object     |                                     | required     |
+| `dimensions`  | Package dimensions | `dimensions` object |                                     | required     |
+| `packageType` | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
+
+##### `weight` object structure
+| Name    | Description  | Type   | Format                                           | Restrictions |
+|---------|--------------|--------|--------------------------------------------------|--------------|
+| `value` | Weight value | number | (³)(⁶)                                           | required     |
+| `units` | Weight units | number | Currently the only accepted value is 1, for "KG" | required     |
+
+##### `dimensions` object structure
+| Name     | Description      | Type   | Format                                           | Restrictions |
+|----------|------------------|--------|--------------------------------------------------|--------------|
+| `length` | Package length   | number | (³)(⁶)                                           | required     |
+| `width`  | Package width    | number | (³)(⁶)                                           | required     |
+| `height` | Package height   | number | (³)(⁶)                                           | required     |
+| `units`  | Dimensions units | number | Currently the only accepted value is 1, for "KG" | required     |
+---
+
+(¹) Data containing special characters will be rejected;  
 (²) For `US`, `phone` should start with 1 and contain 11 digits;  
-(³) `email` is required for `shipFrom`;  
+(³) Numbers containing non-numeric characters will be rejected;  
+(⁴) `state` is required only for the following countries: IT, CA, US;  
+(⁵) `email` is required for the `shipFrom` address;  
+(⁶) Any value using a fractional part must use a period as the decimal separator.

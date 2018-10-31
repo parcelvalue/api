@@ -48,7 +48,7 @@ Authorization: Bearer <JWT>
 In case of an error, the API will return a `401 Unauthorized` response.  
 The response `JSON API` document will contain an `error` object.
 The API response will also contain a `WWW-Authenticate` header containing information about the error.
-> Please see the [Errors documentation](docs/Errors.md) for further information about errors.  
+> Please see the [Errors documentation](/docs/Errors.md) for further information about errors.  
 
 #### Error messages
 | Message                                   | Explanation                                                                 |

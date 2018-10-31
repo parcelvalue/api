@@ -36,7 +36,7 @@ A request `JWT` will have the following structure:
 
 The `JWT` will be constructed using the following data you should have been provided with (please check in the ParcelValue client area for the up to date information): `clientId`, `clientKey`, `serverKey`.
 
-For an example of generating a JWT in PHP please see the project [parcelvalue/api-client](https://github.com/parcelvalue/api-client)
+For an example of generating a JWT in PHP please see the project [ParcelValue API Client](https://github.com/parcelvalue/api-client)
 
 The JWT should be sent via a "`Bearer`" `Authorization` HTTP Header, like so:
 ```

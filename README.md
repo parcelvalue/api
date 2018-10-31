@@ -20,7 +20,7 @@ Check your account for the Client Key and Server Key needed for API authenticati
 ### General information
 
 * [Content type](docs/ContentType.md)
-* [Handling errors](docs/HandlingErrors.md)
+* [Error handling](docs/ErrorHandling.md)
 * [Authentication](docs/Authentication.md)
 * [Testing the API](docs/Testing.md)
 

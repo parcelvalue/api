@@ -4,7 +4,7 @@ Test the ParcelValue API.
 
 Methods : `GET`, `HEAD`, `POST`
 
-> Please see also [Testing the API](/../../docs/Testing.md).
+> Please see also [Testing the API](/docs/Testing.md).
 
 ---
 

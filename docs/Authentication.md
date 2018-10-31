@@ -10,7 +10,8 @@ The APi will return a `400 Bad Request` in case SSL is not used.
 
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 
-There are `JWT` libraries available for a multitude of programming languages.  
+There are `JWT` libraries for Token signing/verification available for a multitude of programming and scripting languages:  
+.NET, Python, Node.js, Java, JavaScript, Perl, Ruby, Elixir, Erlang, Go, Groovy, Haskell, Haxe, Rust, Lua, Scala, D, Clojure, Objective-C, Swift, C, C++, kdb+/Q, Delphi, PHP, Crystal, 1C, PostgreSQL.  
 Please see https://jwt.io/ for more information.
 
 The `JWT` Hashing algorithm used by the ParcelValue API is  `HMAC SHA256`

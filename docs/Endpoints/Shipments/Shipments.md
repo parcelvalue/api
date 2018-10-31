@@ -24,7 +24,7 @@ On success, the API will return a `JSON API` document with a `shipment` object a
 |---------|-------------------|
 | Success | `202 Accepted`    |
 | Error   | `400 Bad Request` |
-> Please see also the [Errors documentation](docs/Errors.md) for further information about errors.  
+> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors. 
 
 ---
 

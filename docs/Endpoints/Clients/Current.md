@@ -20,7 +20,7 @@ The `id` member of the `client` object will contain the ParcelValue client id.
 |---------|--------------------|
 | Success | `200 OK`           |
 | Error   | `401 Unauthorized` |
-> Please see also the [Errors documentation](docs/Errors.md) for further information about errors.  
+> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors. 
 
 > Please see the [Authentication documentation](docs/Authentication.md) for further information about the authentication process and error handling.
 

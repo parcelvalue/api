@@ -1,4 +1,4 @@
-# Handling errors
+# Error handling
 
 In case of an unsuccessful request, the API will return a `4xx` or `5xx` response.  
 The response `JSON API` document will contain an `error` object.  

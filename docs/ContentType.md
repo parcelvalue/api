@@ -11,7 +11,9 @@ Request content data should follow the `JSON API` specification.
 
 The currently supported JSON API version is `1.0`.
 
-An example of the structure of both request and response data is as follows:
+## Examples
+
+An example of the structure of both request and response data for the `/shipments` endpoint would be:
 
 ```
 {
@@ -74,4 +76,4 @@ An example of the structure of both request and response data is as follows:
 }
 ```
 
-Please see https://jsonapi.org for more information.
+> Please see https://jsonapi.org for more information.

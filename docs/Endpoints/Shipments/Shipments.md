@@ -10,7 +10,7 @@ Methods : `POST`
 #### `POST` `/shipments`
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 
-### Retrieving information about an existing shipment. [TODO]
+### Retrieving information about an existing shipment.
 #### `GET` `/shipments/<id>`
 The request should contain no content body.
 
@@ -19,6 +19,8 @@ The request should contain no content body.
 On success, the API will return a `JSON API` document with a `shipment` object as the `data` member.  
 The `id` member of the `shipment` object will contain the ParcelValue shipment id.  
 The `shipment` object will also contain a `links` object, which in turn contains a `self` link that identifies the resource represented by the `shipment` object.
+
+The `shipment` meta will contain the `status` member (please see status codes below).
 
 ### Response codes
 | Result  | HTTP status code  |
@@ -43,9 +45,23 @@ The `shipment` object will also contain a `links` object, which in turn contains
 | `saturdayDelivery` | "Saturday Delivery" option    | boolean          | `true`, `false` | optional     |`false`  |
 
 ### `shipment` object meta
-| Name      | Description             | Type   | Format               | Restrictions |
-|-----------|-------------------------|--------|----------------------|--------------|
-| `service` | Shipment service option | string | `express`, `economy` | required     |
+| Name      | Description             | Type    | Format               | Restrictions |
+|-----------|-------------------------|---------|----------------------|--------------|
+| `service` | Shipment service option | string  | `express`, `economy` | required     |
+| `status`  | Shipment status code    | integer | `-1`, `0`, `3`       | required     |
+
+#### Shipment status codes
+| Code | Description                  |
+|------|------------------------------|
+| `-1` | Error                        |
+|  `0` | Saved (pending confirmation) |
+|  `3` | Confirmed                    |
+
+### `shipment` object links (response only)
+| Name      | Description             | Type   | Format           |
+|-----------|-------------------------|--------|------------------|
+| `self`    | Shipment resource URL   | string | `/shipments<id>` |
+
 
 ### `address` object structure
 | Name         | Description          | Type   | Format                                            | Restrictions |

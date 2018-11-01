@@ -13,7 +13,7 @@ The currently supported JSON API version is `1.0`.
 
 ## Examples
 
-An example of the structure of both request and response data for the `/shipments` endpoint would be:
+An example of the structure of a request data for the `/shipments` endpoint would be:
 
 ```
 {

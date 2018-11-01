@@ -4,6 +4,7 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
     const TYPE = 'shipment';
+    const DATE_FORMAT = 'Y-m-d';
 
     public function __construct($id = null)
     {

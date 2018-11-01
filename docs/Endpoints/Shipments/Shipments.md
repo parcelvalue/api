@@ -24,7 +24,7 @@ On success, the API will return a `JSON API` document with a `shipment` object a
 |---------|-------------------|
 | Success | `202 Accepted`    |
 | Error   | `400 Bad Request` |
-> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors. 
+> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
 
 ---
 
@@ -32,11 +32,13 @@ On success, the API will return a `JSON API` document with a `shipment` object a
 
 ### `shipment` object attributes
 
-| Name       | Description                   | Type             | Format | Restrictions |
-|------------|-------------------------------|------------------|--------|--------------|
-| `shipFrom` | Sender address                | `address` object |        | required     |
-| `shipTo`   | Receiver address              | `address` object |        | required     |
-| `packages` | One or more `package` objects | `package` object |        | required     |
+| Name               | Description                   | Type             | Format          | Restrictions | Default |
+|--------------------|-------------------------------|------------------|-----------------|--------------|---------|
+| `shipFrom`         | Sender address                | `address` object |                 | required     |         |
+| `shipTo`           | Receiver address              | `address` object |                 | required     |         |
+| `packages`         | One or more `package` objects | `package` object |                 | required     |         |
+| `useCod`           | "Cash On Delivery" option     | boolean          | `true`, `false` | optional     |`false`  |
+| `saturdayDelivery` | "Saturday Delivery" option    | boolean          | `true`, `false` | optional     |`false`  |
 
 ### `address` object structure
 | Name         | Description          | Type   | Format                                            | Restrictions |

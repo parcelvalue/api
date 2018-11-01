@@ -40,5 +40,5 @@ Check your account for the Client Key and Server Key needed for API authenticati
 ---
 
 This project contains the API documentation.  
-The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is not required.  
+The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is usually not needed.  
 For code checking and validation, please see the [Developer installation information](docs/DeveloperInstallation.md)

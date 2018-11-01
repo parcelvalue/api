@@ -34,6 +34,7 @@ On success, the API will return a `JSON API` document with a `shipment` object a
 
 | Name               | Description                   | Type             | Format          | Restrictions | Default |
 |--------------------|-------------------------------|------------------|-----------------|--------------|---------|
+| `shipDate`         | Shipment departure date       | string           | ISO 8601 Date   | required     |         |
 | `shipFrom`         | Sender address                | `address` object |                 | required     |         |
 | `shipTo`           | Receiver address              | `address` object |                 | required     |         |
 | `packages`         | One or more `package` objects | `package` object |                 | required     |         |

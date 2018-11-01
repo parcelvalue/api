@@ -23,6 +23,7 @@ An example of the structure of both request and response data for the `/shipment
     "data": {
         "type": "shipment",
         "attributes": {
+            "shipDate": "2018-12-01",
             "shipFrom": {
                 "name" : "Sender Name",
                 "address1": "Sender street 123",

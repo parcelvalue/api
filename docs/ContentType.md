@@ -73,9 +73,11 @@ An example of the structure of both request and response data for the `/shipment
             }],
             "useCod": true,
             "saturdayDelivery": true
+        },
+        "meta": {
+            "service": "express"
         }
-    },
-    "meta" : {}
+    }
 }
 ```
 

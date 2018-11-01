@@ -41,6 +41,11 @@ On success, the API will return a `JSON API` document with a `shipment` object a
 | `useCod`           | "Cash On Delivery" option     | boolean          | `true`, `false` | optional     |`false`  |
 | `saturdayDelivery` | "Saturday Delivery" option    | boolean          | `true`, `false` | optional     |`false`  |
 
+### `shipment` object meta
+| Name      | Description             | Type   | Format               | Restrictions |
+|-----------|-------------------------|--------|----------------------|--------------|
+| `service` | Shipment service option | string | `express`, `economy` | required     |
+
 ### `address` object structure
 | Name         | Description          | Type   | Format                                            | Restrictions |
 |--------------|----------------------|--------|---------------------------------------------------|--------------|

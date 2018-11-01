@@ -17,7 +17,8 @@ The request should contain no content body.
 ## Response
 
 On success, the API will return a `JSON API` document with a `shipment` object as the `data` member.  
-[TODO] The `id` member of the `shipment` object will contain the ParcelValue shipment id.
+The `id` member of the `shipment` object will contain the ParcelValue shipment id.  
+The `shipment` object will also contain a `links` object, which in turn contains a `self` link that identifies the resource represented by the `shipment` object.
 
 ### Response codes
 | Result  | HTTP status code  |

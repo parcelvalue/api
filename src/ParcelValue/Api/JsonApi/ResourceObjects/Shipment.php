@@ -20,4 +20,10 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         $this->setMeta('service', $service);
         return true;
     }
+
+    public function setStatus(int $status)
+    {
+        $this->setMeta('status', $status);
+        return true;
+    }
 }

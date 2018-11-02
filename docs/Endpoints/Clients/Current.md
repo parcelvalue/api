@@ -25,7 +25,7 @@ The `id` member of the `client` object will contain the ParcelValue client id.
 > Please see the [Authentication documentation](/docs/Authentication.md) for further information about the authentication process and error handling.
 
 ---
-## Document structure
+## Response document structure
 
 ### `client` object attributes
 | Name   | Description | Type  |
@@ -38,34 +38,34 @@ The `id` member of the `client` object will contain the ParcelValue client id.
 
 ### Valid authentication
 ```
-GET /v999/clients/current HTTP/1.1
+GET /v1/clients/current HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 200 OK
-Date: Wed, 31 Oct 2018 14:31:18 GMT
+Date: Fri, 02 Nov 2018 13:53:48 GMT
 Server: Apache
-Content-length: 103
+Content-length: 113
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
-Content-Type: application/vnd.api+json; charset=utf-8
+Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"client","id":"<clientId>","attributes":{"name":"<clientName>"}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"client","id":<ClientId>,"attributes":{"name":"<ClientName>"}}}
 ```
 
 ### No `Authorization` header
 ```
-GET /v999/clients/current HTTP/1.1
+GET /v1/clients/current HTTP/1.1
 Accept: application/vnd.api+json
 Host: api.parcelvalue.eu
 
 HTTP/1.1 401 Unauthorized
-Date: Wed, 31 Oct 2018 15:21:06 GMT
+Date: Fri, 02 Nov 2018 13:54:37 GMT
 Server: Apache
 WWW-Authenticate: Bearer realm="api.parcelvalue.eu", error="authorization_exception", error_description="Missing or invalid authorization header"
 Content-length: 129
-Keep-Alive: timeout=5, max=99
+Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 

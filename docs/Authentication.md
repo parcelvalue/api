@@ -34,7 +34,7 @@ A request `JWT` will have the following structure:
 }
 ```
 
-The `JWT` will be constructed using the following data you should have been provided with (please check in the ParcelValue client area for the up to date information): `clientId`, `clientKey`, `serverKey`.
+The `JWT` will be constructed using the following data you should have been provided with (please check the [`API`](https://my.parcelvalue.eu) section of the ParcelValue client area for the up to date values to use): `clientId`, `clientKey`, `serverKey`.
 
 For an example of generating a JWT in PHP please see the project [ParcelValue API Client](https://github.com/parcelvalue/api-client)
 

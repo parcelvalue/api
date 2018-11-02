@@ -1,6 +1,8 @@
 # Testing
 
-One way of testing the API could be by installing a web browser extension.  
+The project [ParcelValue API Client](https://github.com/parcelvalue/api-client) provides some utilities and examples for the ParcelValue API.
+
+Another way of testing the API could be by installing a web browser extension.  
 
 Some examples:  
 [Restlet Client](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm  ) (Google Chrome)  

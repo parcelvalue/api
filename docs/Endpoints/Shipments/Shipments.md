@@ -37,14 +37,16 @@ The `shipment` meta will contain the `status` member (please see status codes be
 
 ### `shipment` object attributes
 
-| Name               | Description                   | Type             | Format          | Restrictions | Default |
-|--------------------|-------------------------------|------------------|-----------------|--------------|---------|
-| `shipDate`         | Shipment departure date       | string           | ISO 8601 Date   | required     |         |
-| `shipFrom`         | Sender address                | `address` object |                 | required     |         |
-| `shipTo`           | Receiver address              | `address` object |                 | required     |         |
-| `packages`         | One or more `package` objects | `package` object |                 | required     |         |
-| `useCod`           | "Cash On Delivery" option     | boolean          | `true`, `false` | optional     |`false`  |
-| `saturdayDelivery` | "Saturday Delivery" option    | boolean          | `true`, `false` | optional     |`false`  |
+| Name               | Description                        | Type             | Format          | Restrictions | Default |
+|--------------------|------------------------------------|------------------|-----------------|--------------|---------|
+| `shipDate`         | Shipment departure date            | string           | ISO 8601 Date   | required     |         |
+| `shipFrom`         | Sender address                     | `address` object |                 | required     |         |
+| `shipTo`           | Receiver address                   | `address` object |                 | required     |         |
+| `packages`         | One or more `package` objects      | `package` object |                 | required     |         |
+| `goodsDescription` | Description of items being shipped | string           |                 | required     |         |
+| `invoiceSubtotal`  | Value of items being shipped       | `amount` object  |                 | required     |         |
+| `useCod`           | "Cash On Delivery" option          | boolean          | `true`, `false` | optional     |`false`  |
+| `saturdayDelivery` | "Saturday Delivery" option         | boolean          | `true`, `false` | optional     |`false`  |
 
 ### `shipment` object meta
 | Name      | Description             | Type    | Format               | Restrictions           |
@@ -98,6 +100,12 @@ The `shipment` meta will contain the `status` member (please see status codes be
 | `width`  | Package width    | number | (³)(⁶)                                           | required     |
 | `height` | Package height   | number | (³)(⁶)                                           | required     |
 | `units`  | Dimensions units | number | Currently the only accepted value is 1, for "KG" | required     |
+
+### `amount` object structure
+| Name       | Description     | Type   | Format                                           | Restrictions |
+|------------|-----------------|--------|--------------------------------------------------|--------------|
+| `amount`   | Amount value    | number | (³)(⁶)                                           | required     |
+| `currency` | Amount currency | string | Currently the only accepted value is "EUR"       | required     |
 
 (¹) Data containing special characters will be rejected;  
 (²) For `US`, `phone` should start with 1 and contain 11 digits;  

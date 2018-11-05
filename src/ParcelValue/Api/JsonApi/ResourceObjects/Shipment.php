@@ -7,6 +7,7 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
     const DATE_FORMAT = 'Y-m-d';
     const SERVICE_ECONOMY = 'economy';
     const SERVICE_EXPRESS = 'express';
+    const CURRENCY_EUR = 'EUR';
 
     public function __construct($id = null)
     {

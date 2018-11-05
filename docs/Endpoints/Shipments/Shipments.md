@@ -85,7 +85,7 @@ The `shipment` meta will contain the `status` member (please see status codes be
 |---------------|--------------------|---------------------|-------------------------------------|--------------|
 | `weight`      | Package weight     | `weight` object     |                                     | required     |
 | `dimensions`  | Package dimensions | `dimensions` object |                                     | required     |
-| `packageType` | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
+| `type`        | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
 
 ### `weight` object structure
 | Name    | Description  | Type   | Format                                           | Restrictions |
@@ -167,7 +167,7 @@ Content-Type: application/vnd.api+json
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             },
             {
                 "weight": {
@@ -180,7 +180,7 @@ Content-Type: application/vnd.api+json
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             }],
             "goodsDescription": "Items from order #1",
             "invoiceSubtotal": {
@@ -204,7 +204,7 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5"},"meta":{"service":"express","status":0}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5"},"meta":{"service":"express","status":0}}}
 ```
 
 ### Creating a new shipment: error, missing service option
@@ -256,7 +256,7 @@ Content-Type: application/vnd.api+json
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             },
             {
                 "weight": {
@@ -269,7 +269,7 @@ Content-Type: application/vnd.api+json
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             }],
             "goodsDescription": "Items from order #1",
             "invoiceSubtotal": {
@@ -307,7 +307,7 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<ID>","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/<ID>"},"meta":{"service":"express","status":0}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<ID>","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/<ID>"},"meta":{"service":"express","status":0}}}
 ```
 
 ### Retrieve a shipment: error (invalid id)

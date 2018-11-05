@@ -123,7 +123,7 @@ The `shipment` meta will contain the `status` member (please see status codes be
 POST /v1/shipments HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
-Content-Length: 1834
+Content-Length: 2006
 Host: api.parcelvalue.eu
 Content-Type: application/vnd.api+json
 
@@ -182,6 +182,11 @@ Content-Type: application/vnd.api+json
                 },
                 "packageType": "CARTON"
             }],
+            "goodsDescription": "Items from order #1",
+            "invoiceSubtotal": {
+                "amount": "13.69",
+                "currency": "EUR"
+            },
             "useCod": true,
             "saturdayDelivery": true
         },
@@ -192,14 +197,14 @@ Content-Type: application/vnd.api+json
 }
 
 HTTP/1.1 202 Accepted
-Date: Fri, 02 Nov 2018 14:10:44 GMT
+Date: Mon, 05 Nov 2018 14:17:28 GMT
 Server: Apache
-Content-length: 1022
+Content-length: 1117
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"906C7AA076355F9BDD6DDF478BC1501A6BFC0D9B9678C9946F1080523673CC24","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTp":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/906C7AA076355F9BDD6DDF478BC1501A6BFC0D9B9678C9946F1080523673CC24"},"meta":{"service":"express","status":0}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTp":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/9DC75ED09126DA15FE8A749ED115E9EC33685AE7D5445B37C942E25ECABFA2E5"},"meta":{"service":"express","status":0}}}
 ```
 
 ### Creating a new shipment: error, missing service option
@@ -207,7 +212,7 @@ Content-Type: application/vnd.api+json
 POST /v1/shipments HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
-Content-Length: 1772
+Content-Length: 1944
 Host: api.parcelvalue.eu
 Content-Type: application/vnd.api+json
 
@@ -266,6 +271,11 @@ Content-Type: application/vnd.api+json
                 },
                 "packageType": "CARTON"
             }],
+            "goodsDescription": "Items from order #1",
+            "invoiceSubtotal": {
+                "amount": "13.69",
+                "currency": "EUR"
+            },
             "useCod": true,
             "saturdayDelivery": true
         }
@@ -273,7 +283,7 @@ Content-Type: application/vnd.api+json
 }
 
 HTTP/1.1 400 Bad Request
-Date: Fri, 02 Nov 2018 14:19:31 GMT
+Date: Mon, 05 Nov 2018 14:18:44 GMT
 Server: Apache
 Content-length: 129
 Connection: close
@@ -290,14 +300,14 @@ Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 200 OK
-Date: Fri, 02 Nov 2018 14:21:24 GMT
+Date: Mon, 05 Nov 2018 14:20:05 GMT
 Server: Apache
-Content-length: 1022
+Content-length: 1117
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<ID>","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTp":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/<ID>"},"meta":{"service":"express","status":0}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<ID>","attributes":{"shipDate":"2018-12-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTp":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"packageType":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"\/shipments\/<ID>"},"meta":{"service":"express","status":0}}}
 ```
 
 ### Retrieve a shipment: error (invalid id)
@@ -308,7 +318,7 @@ Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 
 HTTP/1.1 404 Not Found
-Date: Fri, 02 Nov 2018 14:23:23 GMT
+Date: Mon, 05 Nov 2018 14:21:20 GMT
 Server: Apache
 Content-length: 105
 Keep-Alive: timeout=5, max=100

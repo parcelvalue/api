@@ -56,7 +56,7 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             },
             {
                 "weight": {
@@ -69,7 +69,7 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                     "height": "34",
                     "units": "1"
                 },
-                "packageType": "CARTON"
+                "type": "CARTON"
             }],
             "goodsDescription": "Items from order #1",
             "invoiceSubtotal": {

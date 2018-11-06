@@ -16,6 +16,11 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         $this->setType(self::TYPE);
     }
 
+    public function getService()
+    {
+        return $this->getMeta('service');
+    }
+
     public function setService($service)
     {
         $this->setMeta('service', $service);

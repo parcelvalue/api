@@ -20,7 +20,8 @@ The request should contain no content body.
 
 On success, the API will return a `JSON API` document with a `shipment` object as the `data` member.  
 The `id` member of the `shipment` object will contain the ParcelValue shipment id.  
-The `shipment` object will also contain a `links` object, which in turn contains a `self` link that identifies the resource represented by the `shipment` object.
+The `shipment` object will also contain a `links` object, which in turn contains a `self` link that identifies the resource represented by the `shipment` object.  
+The response will also include a `Location` header identifying the location of the newly created resource.
 
 The `shipment` meta will contain the `status` member (please see status codes below).
 
@@ -37,34 +38,37 @@ The `shipment` meta will contain the `status` member (please see status codes be
 
 ### `shipment` object attributes
 
-| Name               | Description                        | Type             | Format          | Restrictions | Default |
-|--------------------|------------------------------------|------------------|-----------------|--------------|---------|
-| `shipDate`         | Shipment departure date            | string           | ISO 8601 Date   | required     |         |
-| `shipFrom`         | Sender address                     | `address` object |                 | required     |         |
-| `shipTo`           | Receiver address                   | `address` object |                 | required     |         |
-| `packages`         | One or more `package` objects      | `package` object |                 | required     |         |
-| `goodsDescription` | Description of items being shipped | string           |                 | required     |         |
-| `invoiceSubtotal`  | Value of items being shipped       | `amount` object  |                 | required     |         |
-| `useCod`           | "Cash On Delivery" option          | boolean          | `true`, `false` | optional     |`false`  |
-| `saturdayDelivery` | "Saturday Delivery" option         | boolean          | `true`, `false` | optional     |`false`  |
+| Name               | Description                        | Type             | Format          | Restrictions  | Default |
+|--------------------|------------------------------------|------------------|-----------------|---------------|---------|
+| `shipDate`         | Departure date                     | string           | ISO 8601 Date   | required      |         |
+| `shipFrom`         | Sender address                     | `address` object |                 | required      |         |
+| `shipTo`           | Receiver address                   | `address` object |                 | required      |         |
+| `packages`         | One or more `package` objects      | `package` object |                 | required      |         |
+| `goodsDescription` | Description of items being shipped | string           |                 | required      |         |
+| `invoiceSubtotal`  | Value of items being shipped       | `amount` object  |                 | required      |         |
+| `useCod`           | "Cash On Delivery" option          | boolean          | `true`, `false` | optional      |`false`  |
+| `saturdayDelivery` | "Saturday Delivery" option         | boolean          | `true`, `false` | optional      |`false`  |
 
 ### `shipment` object meta
-| Name      | Description             | Type    | Format               | Restrictions           |
-|-----------|-------------------------|---------|----------------------|------------------------|
-| `service` | Shipment service option | string  | `express`, `economy` | required               |
-| `status`  | Shipment status code    | integer | `-1`, `0`, `3`       | used only in responses |
+| Name             | Description                                | Type    | Format               | Restrictions      |
+|------------------|--------------------------------------------|---------|----------------------|-------------------|
+| `service`        | Shipment service option                    | string  | `express`, `economy` | required          |
+| `status`         | Shipment status code                       | integer | `-1`, `0`, `3`       | response only     |
+| `reference`      | Reference number (used in the Client area) | string  |                      | response only (⁷) |
+| `trackingNumber` | Tracking number                            | string  |                      | response only (⁷) |
 
 #### Shipment status codes
 | Code | Description                  |
 |------|------------------------------|
 | `-1` | Error                        |
 |  `0` | Saved (pending confirmation) |
-|  `3` | Confirmed                    |
+|  `3` | Shipment is confirmed        |
 
 ### `shipment` object links (response only)
-| Name      | Description             | Type   | Format           |
-|-----------|-------------------------|--------|------------------|
-| `self`    | Shipment resource URL   | string | `/shipments<id>` |
+| Name       | Description             | Type   | Format                   | Restrictions      |
+|------------|-------------------------|--------|--------------------------|-------------------|
+| `self`     | Shipment resource URL   | string | `<apiURL>/shipments<id>` | response only     |
+| `tracking` | External tracking URL   | string |                          | response only (⁷) |
 
 
 ### `address` object structure
@@ -112,7 +116,8 @@ The `shipment` meta will contain the `status` member (please see status codes be
 (³) Numbers containing non-numeric characters will be rejected;  
 (⁴) `state` is required only for the following countries: IT, CA, US;  
 (⁵) `email` is required for the `shipFrom` address;  
-(⁶) Any value using a fractional part must use a period as the decimal separator.
+(⁶) Any value using a fractional part must use a period as the decimal separator;  
+(⁷) This field is only returned for completed shipments;
 
 ---
 

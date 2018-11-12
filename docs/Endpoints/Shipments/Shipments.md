@@ -1,6 +1,6 @@
 # `/shipments`
 
-Create a new shipment.
+Create a new shipment, retrieve shipment information, retrieve shipment documents.
 
 Methods : `GET`, `POST`
 
@@ -11,30 +11,49 @@ Methods : `GET`, `POST`
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 
 ### Retrieving information about an existing shipment.
-#### `GET` `/shipments/<id>`
+#### `GET` `/shipments/<shipmentId>`
+The request should contain no content body.
+
+### Retrieving shipment documents
+#### `GET` `/shipments/<shipmentId>/documents`
 The request should contain no content body.
 
 ---
 
 ## Response
 
-On success, the API will return a `JSON API` document with a `shipment` object as the `data` member.  
-The `id` member of the `shipment` object will contain the ParcelValue shipment id.  
+On success, the API will return a `JSON API` document with a `shipment` or `documents` object as the `data` member.  
+The `id` member of the response object will contain the ParcelValue shipment id.  
+
+The `documents` object will contain base64 encoded file data, while the `shipments` object will contain all the available shipment information.
+
 The `shipment` object will also contain a `links` object, which in turn contains a `self` link that identifies the resource represented by the `shipment` object.  
-The response will also include a `Location` header identifying the location of the newly created resource.
+
+For shipment creation, the response will also include a `Location` header identifying the location of the newly created resource.
 
 The `shipment` meta will contain the `status` member (please see status codes below).
 
 ### Response codes
-| Result  | HTTP status code  |
-|---------|-------------------|
-| Success | `202 Accepted`    |
-| Error   | `400 Bad Request` |
+| Result    | HTTP status code  | Notes                                 |
+|-----------|-------------------|---------------------------------------|
+| Success   | `200 OK`          | Retrieve shipment, retrieve documents |
+| Success   | `202 Accepted`    | Create shipment                       |
+| Error     | `400 Bad Request` |                                       |
+| Not Found | `404 Not Found`   |                                       |
 > Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
 
 ---
 
 ## Document structure
+
+### `documents` object attributes
+
+| Name          | Description                                       | Type             | Format          |
+|---------------|---------------------------------------------------|------------------|-----------------|
+| `contentType` | Content-Type MIME Header                          | string           | type/subtype    |
+| `fileName`    | Name of the file                                  | string           |                 |
+| `fileData`    | Body of the file, encoded using the Base64 scheme | string           |                 |
+
 
 ### `shipment` object attributes
 
@@ -376,4 +395,83 @@ Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
 {"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<ID>","attributes":{"shipDate":"2018-11-01","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"useCod":true,"saturdayDelivery":true},"links":{"self":"https:\/\/api.parcelvalue.eu\/v1\/shipments\/<ID>"},"meta":{"service":"express","status":-1,"reference":<REFERENCE>}}}
+```
+
+### Retrieve shipment documents: success
+
+```
+GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+Authorization: Bearer <JWT>
+Accept: application/vnd.api+json
+Host: api.parcelvalue.eu
+
+HTTP/1.1 200 OK
+Date: Mon, 12 Nov 2018 13:48:46 GMT
+Server: Apache
+Content-length: 201972
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/vnd.api+json
+
+{"jsonapi":{"version":"1.0"},"data":{"type":"documents","id":"<SHIPMENTID>","attributes":{"contentType":"<CONTENTTYPE>","fileName":"<FILENAME>","fileData":"<FILEDATA>"}}}
+```
+
+### Retrieve shipment documents: error
+> Shipment is in error (status -1), so no documents are  available
+
+```
+GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
+Host: api.parcelvalue.eu
+
+HTTP/1.1 404 Not Found
+Date: Mon, 12 Nov 2018 13:52:28 GMT
+Server: Apache
+Content-length: 101
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/vnd.api+json
+
+{"jsonapi":{"version":"1.0"},"errors":[{"status":404,"title":"Not Found","detail":"Shipment error"}]}
+```
+
+### Retrieve shipment documents: error
+> Shipment is not yet processed (status 0), so no documents are  available
+
+```
+GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
+Host: api.parcelvalue.eu
+
+HTTP/1.1 404 Not Found
+Date: Mon, 12 Nov 2018 13:55:51 GMT
+Server: Apache
+Content-length: 113
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/vnd.api+json
+
+{"jsonapi":{"version":"1.0"},"errors":[{"status":404,"title":"Not Found","detail":"Shipment not yet processed"}]}
+```
+
+### Retrieve shipment documents: error
+> Shipment doesn't exist
+
+```
+GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+Accept: application/vnd.api+json
+Authorization: Bearer <JWT>
+Host: api.parcelvalue.eu
+
+HTTP/1.1 404 Not Found
+Date: Mon, 12 Nov 2018 13:57:33 GMT
+Server: Apache
+Content-length: 105
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/vnd.api+json
+
+{"jsonapi":{"version":"1.0"},"errors":[{"status":404,"title":"Not Found","detail":"Shipment not found"}]}
 ```

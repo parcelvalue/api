@@ -10,8 +10,8 @@ ParcelValue API
 
 ---
 
-Before using the API please make sure you have an account set up and can log in to the [ParcelValue client area](https://my.parcelvalue.eu).  
-You can find your access data in the [`API`](https://my.parcelvalue.eu/Clients/api) section of [my.ParcelValue.eu](https://my.parcelvalue.eu).
+Before using the API please make sure you have a ParcelValue client account set up.  
+Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parcelvalue.eu) and visit the section [`API`](https://my.parcelvalue.eu/Clients/api) where you will find the API keys and any related information.
 
 ---
 

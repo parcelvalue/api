@@ -37,9 +37,9 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         return true;
     }
 
-    public function setStatus(int $status)
+    public function setStatus($status)
     {
-        $this->setMeta('status', $status);
+        $this->setMeta('status', (int) $status);
         return true;
     }
 }

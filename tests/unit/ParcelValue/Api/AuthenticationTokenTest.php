@@ -6,11 +6,21 @@ use PHPUnit\Framework\TestCase;
 
 final class AuthenticationTokenTest extends TestCase
 {
-    const JWT = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
-    .'.eyJzdWIiOiIxIiwiY2xpZW50S2V5IjoiZm9vIn0.0aAijrPmrMnihsrVkW_YKm8rnGmG4IvBcacjRyYj7nw';
     const CLIENT_ID = '1';
     const CLIENT_KEY = 'foo';
     const SERVER_KEY = 'bar';
+
+    private static $jwt;
+
+    public static function setUpBeforeClass()
+    {
+        self::$jwt = sprintf(
+            '%s.%s.%s',
+            'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+            'eyJzdWIiOiIxIiwiY2xpZW50S2V5IjoiZm9vIn0',
+            '0aAijrPmrMnihsrVkW_YKm8rnGmG4IvBcacjRyYj7nw'
+        );
+    }
 
     /**
      * @test
@@ -18,7 +28,7 @@ final class AuthenticationTokenTest extends TestCase
     public function generateReturnsExpectedValue()
     {
         $this->assertEquals(
-            self::JWT,
+            self::$jwt,
             AuthenticationToken::generate(self::CLIENT_ID, self::CLIENT_KEY, self::SERVER_KEY)
         );
     }
@@ -28,7 +38,7 @@ final class AuthenticationTokenTest extends TestCase
      */
     public function decodeReturnsExpectedValue()
     {
-        $token = AuthenticationToken::decode(self::JWT, self::SERVER_KEY);
+        $token = AuthenticationToken::decode(self::$jwt, self::SERVER_KEY);
         $this->assertTrue(
             $token instanceof \stdClass
         );

@@ -11,6 +11,7 @@ final class Helper
 
     public function __construct(
         \WebServCo\Framework\Interfaces\LoggerInterface $logger,
+        $jwt,
         $environment //\WebServCo\Framework\Environment
     ) {
         $this->logger = $logger;
@@ -19,6 +20,7 @@ final class Helper
             $this->curlBrowser->setSkipSSlVerification(true);
         }
         $this->curlBrowser->setRequestHeader('Accept', Document::CONTENT_TYPE);
+        $this->curlBrowser->setRequestHeader('Authorization', sprintf('Bearer %s', $jwt));
     }
 
     public function getRequestHeaders()
@@ -29,11 +31,8 @@ final class Helper
     /*
     * @return \WebServCo\Framework\Http\Response
     */
-    public function getResponse($url, $method, array $headers = [], $requestData = null)
+    public function getResponse($url, $method, $requestData = null)
     {
-        foreach ($headers as $key => $value) {
-            $this->curlBrowser->setRequestHeader($key, $value);
-        }
         switch ($method) {
             case Method::POST:
                 $this->curlBrowser->setRequestContentType(Document::CONTENT_TYPE);

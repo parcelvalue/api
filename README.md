@@ -6,7 +6,9 @@
 [![Build Status](https://travis-ci.org/parcelvalue/api.svg)](https://travis-ci.org/parcelvalue/api)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/parcelvalue/api/badges/quality-score.png)](https://scrutinizer-ci.com/g/parcelvalue/api/)
 
-ParcelValue API
+## ParcelValue API
+
+> **For an up to date version of this documentation please visit [https://github.com/parcelvalue/api](https://github.com/parcelvalue/api)**.
 
 ---
 

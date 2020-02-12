@@ -16,7 +16,7 @@ final class Helper
     ) {
         $this->logger = $logger;
         $this->curlBrowser = new \WebServCo\Framework\CurlBrowser($this->logger);
-        if (\WebServCo\Framework\Environment::ENV_DEV == $environment) {
+        if (\WebServCo\Framework\Environment::DEV == $environment) {
             $this->curlBrowser->setSkipSSlVerification(true);
         }
         $this->curlBrowser->setRequestHeader('Accept', Document::CONTENT_TYPE);

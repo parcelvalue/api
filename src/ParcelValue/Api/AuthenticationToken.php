@@ -13,18 +13,18 @@ final class AuthenticationToken
             [
                 'sub' => $clientId,
                 'clientKey' => $clientKey,
-            ],
-            $serverKey,
-            self::ALGORITHM_HS256
+            ], // $payload    PHP object or array
+            $serverKey, // key        The secret key.
+            self::ALGORITHM_HS256 // $alg        The signing algorithm.
         );
     }
 
     public static function decode($string, $serverKey)
     {
         return JWT::decode(
-            $string,
-            $serverKey,
-            [self::ALGORITHM_HS256]
+            $string, // $jwt            The JWT
+            $serverKey, // $key            The key, or map of keys.
+            [self::ALGORITHM_HS256] // $allowed_algs   List of supported verification algorithms
         );
     }
 }

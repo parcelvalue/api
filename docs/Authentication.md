@@ -10,38 +10,7 @@ The APi will return a `400 Bad Request` in case SSL is not used.
 
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 
-There are `JWT` libraries for Token signing/verification available for a multitude of programming and scripting languages:  
-.NET, Python, Node.js, Java, JavaScript, Perl, Ruby, Elixir, Erlang, Go, Groovy, Haskell, Haxe, Rust, Lua, Scala, D, Clojure, Objective-C, Swift, C, C++, kdb+/Q, Delphi, PHP, Crystal, 1C, PostgreSQL.  
-Please see https://jwt.io/ for more information.
-
-The `JWT` Hashing algorithm used by the ParcelValue API is  `HMAC SHA256`
-
-A request `JWT` will have the following structure:
-
-### HEADER:ALGORITHM & TOKEN TYPE
-```
-{
-  "alg": "HS256",
-  "typ": "JWT"
-}
-```
-
-### PAYLOAD:DATA
-```
-{
-  "sub": "<clientId>",
-  "clientKey": "<clientKey>"
-}
-```
-
-The `JWT` will be constructed using the following data you should have been provided with (please check the [`API`](https://my.parcelvalue.eu) section of the ParcelValue client area for the up to date values to use): `clientId`, `clientKey`, `serverKey`.
-
-For an example of generating a JWT in PHP please see the project [ParcelValue API Client](https://github.com/parcelvalue/api-client)
-
-The JWT should be sent via a "`Bearer`" `Authorization` HTTP Header, like so:
-```
-Authorization: Bearer <JWT>
-```
+Please see the separate [JWT documentation](/docs/JWT.md).
 
 ### Handling authentication errors
 

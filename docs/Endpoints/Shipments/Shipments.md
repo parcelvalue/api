@@ -132,7 +132,7 @@ The `shipment` meta will contain the `status` member (please see status codes be
 
 (¹) Data containing special characters will be rejected;  
 (²) For `US`, `phone` should start with 1 and contain 11 digits;  
-(³) Numbers containing non-numeric characters will be rejected; Please make sure to use the point (`.`) as decimal separator;
+(³) Numbers containing non-numeric characters will be rejected; Please make sure to use the point (`.`) as decimal separator;  
 (⁴) `state` is required only for the following countries: IT, CA, US;  
 (⁵) `email` is required for the `shipFrom` address;  
 (⁶) Any value using a fractional part must use a period as the decimal separator;  

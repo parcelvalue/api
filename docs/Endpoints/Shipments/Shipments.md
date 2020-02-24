@@ -91,17 +91,17 @@ The `shipment` meta will contain the `status` member (please see status codes be
 
 
 ### `address` object structure
-| Name         | Description          | Type   | Format                                            | Restrictions |
-|--------------|----------------------|--------|---------------------------------------------------|--------------|
-| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     |
-| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     |
-| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     |
-| `postalCode` | Postal code          | string |                                                   | required     |
-| `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) |
-| `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     |
-| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     |
-| `phone`      | Contact phone number | number | (²)(³)                                            | optional     |
-| `email`      | Contact email        | string |                                                   | required (⁵) |
+| Name         | Description          | Type   | Format                                            | Restrictions | Maximum length |
+|--------------|----------------------|--------|---------------------------------------------------|--------------|----------------|
+| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 255            |
+| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     | 50             |
+| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     | 40             |
+| `postalCode` | Postal code          | string |                                                   | required     | 30             |
+| `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) | 20             |
+| `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     | 2              |
+| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 40             |
+| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 40             |
+| `email`      | Contact email        | string |                                                   | required (⁵) | 40             |
 
 ### `package` object structure
 | Name          | Description        | Type                | Format                              | Restrictions |

@@ -43,7 +43,6 @@ final class Helper
                 break;
             default:
                 throw new \WebServCo\Framework\Exceptions\NotImplementedException('Functionality not implemented');
-                break;
         }
         $this->curlBrowser->setMethod($method);
         return $this->curlBrowser->retrieve($url);

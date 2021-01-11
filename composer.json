@@ -16,7 +16,7 @@
     ],
     "require": {
         "php" : "^5.4 || ^7.0",
-        "webservco/framework" : "@dev",
+        "webservco/framework" : "^9.79.0",
         "webservco/api" : "@dev",
         "firebase/php-jwt": "^5.0"
     },
@@ -39,8 +39,7 @@
         "test:d" : "vendor/bin/phpunit --testdox",
         "check:structure" : "pds-skeleton validate .",
         "check" : "phpcs --standard=PSR2 --extensions=php src public tests",
-        "s:7": "phpstan analyse src tests --level=7 --ansi -c phpstan.neon",
-        "all": "clear && composer s:7 && composer check && composer test",
-        "check:devel": "grep -rnF 'XXX' src"
+        "s:5": "phpstan analyse src tests --level=5 --ansi -c phpstan.neon",
+        "all": "clear && composer s:5 && composer check && composer test"
     }
 }

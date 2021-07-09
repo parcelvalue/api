@@ -8,26 +8,26 @@ use Firebase\JWT\JWT;
 
 final class AuthenticationToken
 {
-    const ALGORITHM_HS256 = 'HS256';
+    protected const ALGORITHM_HS256 = 'HS256';
 
-    public static function generate($clientId, $clientKey, $serverKey)
+    public static function generate(string $clientId, string $clientKey, string $serverKey): string
     {
         return JWT::encode(
             [
                 'sub' => $clientId,
                 'clientKey' => $clientKey,
-            ], // $payload    PHP object or array
-            $serverKey, // key        The secret key.
-            self::ALGORITHM_HS256 // $alg        The signing algorithm.
+            ], // payload PHP object or array
+            $serverKey, // key The secret key.
+            self::ALGORITHM_HS256, // alg The signing algorithm.
         );
     }
 
-    public static function decode($string, $serverKey)
+    public static function decode(string $string, string $serverKey): object
     {
         return JWT::decode(
-            $string, // $jwt            The JWT
-            $serverKey, // $key            The key, or map of keys.
-            [self::ALGORITHM_HS256] // $allowed_algs   List of supported verification algorithms
+            $string, // jwt The JWT
+            $serverKey, // key The key, or map of keys.
+            [self::ALGORITHM_HS256], // allowed_algs List of supported verification algorithms
         );
     }
 }

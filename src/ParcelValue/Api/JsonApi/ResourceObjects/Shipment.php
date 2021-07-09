@@ -6,41 +6,44 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    const TYPE = 'shipment';
-    const DATE_FORMAT = 'Y-m-d';
-    const SERVICE_ECONOMY = 'economy';
-    const SERVICE_EXPRESS = 'express';
-    const CURRENCY_EUR = 'EUR';
+    public const DATE_FORMAT = 'Y-m-d';
+    public const SERVICE_ECONOMY = 'economy';
+    public const SERVICE_EXPRESS = 'express';
+    public const CURRENCY_EUR = 'EUR';
+    public const TYPE = 'shipment';
 
-    public function __construct($id = null)
+    public function __construct(?string $id = null)
     {
         parent::__construct();
-        $this->setId($id);
+
+        if ($id) {
+            $this->setId($id);
+        }
         $this->setType(self::TYPE);
     }
 
-    public function getReference()
+    public function getReference(): string
     {
-        return $this->getMeta('reference');
+        return (string) $this->getMeta('reference');
     }
 
-    public function getService()
+    public function getService(): string
     {
-        return $this->getMeta('service');
+        return (string) $this->getMeta('service');
     }
 
-    public function getStatus()
+    public function getStatus(): int
     {
-        return $this->getMeta('status');
+        return (int) $this->getMeta('status');
     }
 
-    public function setService($service)
+    public function setService(string $service): bool
     {
         $this->setMeta('service', $service);
         return true;
     }
 
-    public function setStatus($status)
+    public function setStatus(string $status): bool
     {
         $this->setMeta('status', (int) $status);
         return true;

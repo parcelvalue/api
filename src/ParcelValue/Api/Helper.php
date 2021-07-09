@@ -5,49 +5,41 @@ declare(strict_types=1);
 namespace ParcelValue\Api;
 
 use WebServCo\Api\JsonApi\Document;
+use WebServCo\Framework\Http\CurlClient;
 use WebServCo\Framework\Http\Method;
+use WebServCo\Framework\Interfaces\LoggerInterface;
+use WebServCo\Framework\Interfaces\ResponseInterface;
 
 final class Helper
 {
-    protected $logger;
-    protected $curlBrowser;
+    protected LoggerInterface $logger;
+    protected CurlClient $curlClient;
 
-    public function __construct(
-        \WebServCo\Framework\Interfaces\LoggerInterface $logger,
-        $jwt,
-        $environment //\WebServCo\Framework\Environment
-    ) {
-        $this->logger = $logger;
-        $this->curlBrowser = new \WebServCo\Framework\CurlBrowser($this->logger);
-        if (\WebServCo\Framework\Environment::DEV == $environment) {
-            $this->curlBrowser->setSkipSSlVerification(true);
-        }
-        $this->curlBrowser->setRequestHeader('Accept', Document::CONTENT_TYPE);
-        $this->curlBrowser->setRequestHeader('Authorization', sprintf('Bearer %s', $jwt));
-    }
-
-    public function getRequestHeaders()
+    public function __construct(LoggerInterface $logger, string $jwt)
     {
-        return $this->curlBrowser->getRequestHeaders();
+        $this->logger = $logger;
+        $this->curlClient = new CurlClient($this->logger);
+        $this->curlClient->setRequestHeader('Accept', Document::CONTENT_TYPE);
+        $this->curlClient->setRequestHeader('Authorization', \sprintf('Bearer %s', $jwt));
     }
 
-    /*
-    * @return \WebServCo\Framework\Http\Response
+    /**
+    * @param array<string,mixed>|string $requestData
     */
-    public function getResponse($url, $method, $requestData = null)
+    public function getResponse(string $url, string $method, $requestData): ResponseInterface
     {
         switch ($method) {
             case Method::POST:
-                $this->curlBrowser->setRequestContentType(Document::CONTENT_TYPE);
-                $this->curlBrowser->setRequestData($requestData);
+                $this->curlClient->setRequestContentType(Document::CONTENT_TYPE);
+                $this->curlClient->setRequestData($requestData);
                 break;
             case Method::GET:
             case Method::HEAD:
                 break;
             default:
-                throw new \WebServCo\Framework\Exceptions\NotImplementedException('Functionality not implemented');
+                throw new \WebServCo\Framework\Exceptions\NotImplementedException('Functionality not implemented.');
         }
-        $this->curlBrowser->setMethod($method);
-        return $this->curlBrowser->retrieve($url);
+        $this->curlClient->setMethod($method);
+        return $this->curlClient->retrieve($url);
     }
 }

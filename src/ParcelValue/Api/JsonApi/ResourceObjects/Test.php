@@ -6,12 +6,15 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Test extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    const TYPE = 'test';
+    public const TYPE = 'test';
 
-    public function __construct($id = null)
+    public function __construct(?string $id = null)
     {
         parent::__construct();
-        $this->setId($id);
+
+        if ($id) {
+            $this->setId($id);
+        }
         $this->setType(self::TYPE);
     }
 }

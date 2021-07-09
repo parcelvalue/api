@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Documents extends \WebServCo\Api\JsonApi\AbstractResourceObject

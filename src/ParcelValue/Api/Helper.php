@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace ParcelValue\Api;
 
 use WebServCo\Api\JsonApi\Document;

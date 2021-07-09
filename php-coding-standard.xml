@@ -72,6 +72,7 @@
 				<element key="2" value="PHPUnit"/>
 				<element key="3" value="Psr"/>
 				<element key="4" value="WebServCo"/>
+				<element key="5" value="Firebase"/>
 			</property>
 			<!-- SlevomatCodingStandard.Files.TypeNameMatchesFileName -->
 			<property name="rootNamespaces" type="array">

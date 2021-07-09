@@ -11,7 +11,7 @@ final class ClientTest extends TestCase
     /**
      * @test
      */
-    public function constantTypeHasExpectedValue()
+    public function constantTypeHasExpectedValue(): void
     {
         $this->assertEquals('client', \ParcelValue\Api\JsonApi\ResourceObjects\Client::TYPE);
     }

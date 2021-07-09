@@ -2,9 +2,9 @@
 
 The project [ParcelValue API Client](https://github.com/parcelvalue/api-client) provides some utilities and examples for the ParcelValue API.
 
-Another way of testing the API could be by installing a web browser extension.  
+Another way of testing the API could be by using a software like [Postman](https://www.postman.com/) or installing a web browser extension.  
 
-Some examples:  
+Some examples of browser extensions:  
 [Restlet Client](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm  ) (Google Chrome)  
 [RESTClient](https://addons.mozilla.org/en-US/firefox/addon/restclient/) (Mozilla Firefox)
 

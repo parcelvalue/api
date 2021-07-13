@@ -14,12 +14,13 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
 
     public function __construct(?string $id = null)
     {
-        parent::__construct();
+        parent::__construct(self::TYPE);
 
-        if ($id) {
-            $this->setId($id);
+        if (!$id) {
+            return;
         }
-        $this->setType(self::TYPE);
+
+        $this->setId($id);
     }
 
     public function getReference(): string

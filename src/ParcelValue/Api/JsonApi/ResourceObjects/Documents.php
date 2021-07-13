@@ -10,9 +10,8 @@ class Documents extends \WebServCo\Api\JsonApi\AbstractResourceObject
 
     public function __construct(string $id)
     {
-        parent::__construct();
+        parent::__construct(self::TYPE);
 
         $this->setId($id);
-        $this->setType(self::TYPE);
     }
 }

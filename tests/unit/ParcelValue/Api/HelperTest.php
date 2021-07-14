@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Api;
 
-use ParcelValue\Api\AuthenticationToken;
+use ParcelValue\Api\JWT\Helper;
 use PHPUnit\Framework\TestCase;
 
-final class AuthenticationTokenTest extends TestCase
+final class HelperTest extends TestCase
 {
     private const CLIENT_ID = '1';
     private const CLIENT_KEY = 'foo';
@@ -22,7 +22,7 @@ final class AuthenticationTokenTest extends TestCase
     {
         $this->assertEquals(
             self::$jwt,
-            AuthenticationToken::generate(self::CLIENT_ID, self::CLIENT_KEY, self::SERVER_KEY),
+            Helper::generate(self::CLIENT_ID, self::CLIENT_KEY, self::SERVER_KEY),
         );
     }
 
@@ -31,8 +31,8 @@ final class AuthenticationTokenTest extends TestCase
      */
     public function decodeReturnsExpectedValue(): void
     {
-        $token = AuthenticationToken::decode(self::$jwt, self::SERVER_KEY);
-        $this->assertTrue($token instanceof \stdClass);
+        $token = Helper::decode(self::$jwt, self::SERVER_KEY);
+        $this->assertTrue($token instanceof \ParcelValue\Api\JWT\Payload);
         $this->assertEquals(self::CLIENT_ID, $token->sub);
         $this->assertEquals(self::CLIENT_KEY, $token->clientKey);
     }

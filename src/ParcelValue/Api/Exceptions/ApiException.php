@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ParcelValue\Api\Exceptions;
 
-final class ApiException extends \WebServCo\Framework\Exceptions\ApplicationException
+class ApiException extends \WebServCo\Framework\Exceptions\ApplicationException
 {
     public const CODE = 0;
 

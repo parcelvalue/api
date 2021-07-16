@@ -32,7 +32,7 @@ final class Helper
                 [self::ALGORITHM_HS256], // allowed_algs List of supported verification algorithms
             );
         } catch (\Throwable $e) {
-            throw new JwtException($e->getMessage(), $e);
+            throw new JwtException($e->getMessage(), $e->getCode(), $e);
         }
 
         if (!\property_exists($payload, 'sub') || !\property_exists($payload, 'clientKey')) {

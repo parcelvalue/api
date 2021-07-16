@@ -19,6 +19,10 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 ## ParcelValue API documentation
 
+### New in Version 3
+
+* Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`.
+
 ### General information
 
 * [Content type](docs/ContentType.md)

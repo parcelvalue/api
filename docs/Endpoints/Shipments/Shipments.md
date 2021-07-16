@@ -87,7 +87,7 @@ The `shipment` meta will contain the `status` member (please see status codes be
 | Name       | Description             | Type   | Format                   | Restrictions      |
 |------------|-------------------------|--------|--------------------------|-------------------|
 | `self`     | Shipment resource URL   | string | `<apiURL>/shipments<id>` | response only     |
-| `tracking` | External tracking URL   | string |                          | response only (⁷) |
+| `tracking` | External tracking URL   | string |                          | response only (⁸) |
 
 
 ### `address` object structure
@@ -136,7 +136,8 @@ The `shipment` meta will contain the `status` member (please see status codes be
 (⁴) `state` is required only for the following countries: IT, CA, US;  
 (⁵) `email` is required for the `shipFrom` address;  
 (⁶) Any value using a fractional part must use a period as the decimal separator;  
-(⁷) This field is only returned for completed shipments;
+(⁷) This field is only returned for completed shipments, otherwise the value is `null`;
+(⁸) This field is only returned for completed shipments, otherwise the field is not present in the reposonse;
 
 ---
 

@@ -144,7 +144,7 @@ The `shipment` meta will contain the `status` member (please see status codes be
 
 ### Creating a new shipment: success
 ```
-POST /v1/shipments HTTP/1.1
+POST /v3/shipments HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Content-Length: 1992
@@ -222,7 +222,7 @@ Content-Type: application/vnd.api+json
 HTTP/1.1 202 Accepted
 Date: Fri, 09 Nov 2018 13:30:24 GMT
 Server: Apache
-Location: https://api.parcelvalue.eu/v1/shipments/251E63A94C6E663DF81885B3577603298D65D564AC04BAD30E0917CCFFD2F2B3
+Location: https://api.parcelvalue.eu/v3/shipments/251E63A94C6E663DF81885B3577603298D65D564AC04BAD30E0917CCFFD2F2B3
 Content-length: 1135
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
@@ -233,7 +233,7 @@ Content-Type: application/vnd.api+json
 
 ### Creating a new shipment: error, missing service option
 ```
-POST /v1/shipments HTTP/1.1
+POST /v3/shipments HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Content-Length: 1930
@@ -319,7 +319,7 @@ Content-Type: application/vnd.api+json
 > Shipment id is invalid
 
 ```
-GET /v1/shipments/<ID> HTTP/1.1
+GET /v3/shipments/<ID> HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -339,7 +339,7 @@ Content-Type: application/vnd.api+json
 > Shipment is newly created, not yet processed (status 0).
 
 ```
-GET /v1/shipments/<ID> HTTP/1.1
+GET /v3/shipments/<ID> HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -359,7 +359,7 @@ Content-Type: application/vnd.api+json
 > Shipment is successfully processed (status 3)
 
 ```
-GET /v1/shipments/<ID> HTTP/1.1
+GET /v3/shipments/<ID> HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -379,7 +379,7 @@ Content-Type: application/vnd.api+json
 > There was an error processing the shipment (status -1)
 
 ```
-GET /v1/shipments/<ID> HTTP/1.1
+GET /v3/shipments/<ID> HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -398,7 +398,7 @@ Content-Type: application/vnd.api+json
 ### Retrieve shipment documents: success
 
 ```
-GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
 Authorization: Bearer <JWT>
 Accept: application/vnd.api+json
 Host: api.parcelvalue.eu
@@ -418,7 +418,7 @@ Content-Type: application/vnd.api+json
 > Shipment is in error (status -1), so no documents are  available
 
 ```
-GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -438,7 +438,7 @@ Content-Type: application/vnd.api+json
 > Shipment is not yet processed (status 0), so no documents are  available
 
 ```
-GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -458,7 +458,7 @@ Content-Type: application/vnd.api+json
 > Shipment doesn't exist
 
 ```
-GET /v1/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu

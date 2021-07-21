@@ -38,7 +38,7 @@ The `id` member of the `client` object will contain the ParcelValue client id.
 
 ### Valid authentication
 ```
-GET /v1/clients/current HTTP/1.1
+GET /v3/clients/current HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -56,7 +56,7 @@ Content-Type: application/vnd.api+json
 
 ### No `Authorization` header
 ```
-GET /v1/clients/current HTTP/1.1
+GET /v3/clients/current HTTP/1.1
 Accept: application/vnd.api+json
 Host: api.parcelvalue.eu
 

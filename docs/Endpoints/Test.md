@@ -15,7 +15,7 @@ The test endpoint simply returns the data received.
 ### Simple test
 
 ```
-GET /v1/test HTTP/1.1
+GET /v3/test HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -34,7 +34,7 @@ Content-Type: application/vnd.api+json
 ### Specify an id
 
 ```
-GET /v1/test/1 HTTP/1.1
+GET /v3/test/1 HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -53,7 +53,7 @@ Content-Type: application/vnd.api+json
 ### Add query paramters
 
 ```
-GET /v1/test/?key1=value1&key2=value2 HTTP/1.1
+GET /v3/test/?key1=value1&key2=value2 HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu

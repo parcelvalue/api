@@ -76,7 +76,6 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": true,
             "saturdayDelivery": true
         },
         "meta": {

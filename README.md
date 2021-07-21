@@ -45,6 +45,17 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 ---
 
 ### Project documentation
+
 This project contains the API documentation.  
 The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is usually not needed.  
 For code checking and validation, please see the [Developer installation information](docs/DeveloperInstallation.md)
+
+
+---
+
+### Related projects
+
+* [ParcelValue API Client](https://github.com/parcelvalue/api-client)
+* [ParcelValue API Postman Collection](https://github.com/parcelvalue/postman-collection)
+
+---

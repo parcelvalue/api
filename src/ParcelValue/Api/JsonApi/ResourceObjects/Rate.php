@@ -8,9 +8,13 @@ class Rate extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
     public const TYPE = 'rate';
 
-    public function __construct(string $id)
+    public function __construct(?string $id = null)
     {
         parent::__construct(self::TYPE);
+
+        if (!$id) {
+            return;
+        }
 
         $this->setId($id);
     }

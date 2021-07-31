@@ -10,7 +10,7 @@ use WebServCo\Framework\Http\Method;
 use WebServCo\Framework\Interfaces\LoggerInterface;
 use WebServCo\Framework\Interfaces\ResponseInterface;
 
-final class Helper
+class Helper
 {
     protected LoggerInterface $logger;
     protected CurlClient $curlClient;

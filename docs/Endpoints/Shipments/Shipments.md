@@ -9,7 +9,7 @@ Methods : `GET`, `POST`
 
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 
-[Examples](/docs/Shipments/ExamplesRate.md)
+[Examples](/docs/Endpoints/Shipments/ExamplesRate.md)
 
 ---
 
@@ -24,7 +24,7 @@ The `attributes.finalCost` property of the rate is optional. If present, the API
 If the new price is different, the shipment will not be confirmed and an error will be returned.
 If the `attributes.finalCost` property is omitted, the shipment will be confirmed without checking the price.
 
-[Examples](/docs/Shipments/ExamplesConfirm.md)
+[Examples](/docs/Endpoints/Shipments/ExamplesConfirm.md)
 
 ---
 
@@ -35,7 +35,7 @@ The request `JSON API` document should contain a `shipment` object as the docume
 
 The meta property of the `shipment` should contain the chosen `service` option.
 
-[Example](/docs/Shipments/ExamplesSimple.md)
+[Example](/docs/Endpoints/Shipments/ExamplesSimple.md)
 
 ---
 
@@ -44,7 +44,7 @@ The meta property of the `shipment` should contain the chosen `service` option.
 
 The request should contain no content body.
 
-[Examples](/docs/Shipments/ExamplesRetrieveShipment.md)
+[Examples](/docs/Endpoints/Shipments/ExamplesRetrieveShipment.md)
 
 ---
 
@@ -53,11 +53,11 @@ The request should contain no content body.
 
 The request should contain no content body.
 
-[Examples](/docs/Shipments/ExamplesRetrieveDocuments.md)
+[Examples](/docs/Endpoints/Shipments/ExamplesRetrieveDocuments.md)
 
 ---
 
 ## Resources
 
-* [Response](/docs/Shipments/Response.md)
-* [Document Structure](/docs/Shipments/DocumentStructure.md)
+* [Response](/docs/Endpoints/Shipments/Response.md)
+* [Document Structure](/docs/Endpoints/Shipments/DocumentStructure.md)

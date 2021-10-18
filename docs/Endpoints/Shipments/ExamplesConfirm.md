@@ -73,7 +73,6 @@ Content-Length: 2754
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": false,
             "saturdayDelivery": false
         },
         "meta": {
@@ -181,7 +180,6 @@ Content-Length: 2755
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": false,
             "saturdayDelivery": false
         },
         "meta": {

@@ -71,7 +71,6 @@ Content-Length: 1961
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": false,
             "saturdayDelivery": false
         },
         "meta": {

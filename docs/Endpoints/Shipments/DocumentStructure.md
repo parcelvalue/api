@@ -30,10 +30,12 @@
 | `shipDate`         | Departure date                     | string           | ISO 8601 Date   | required      |         |
 | `shipFrom`         | Sender address                     | `address` object |                 | required      |         |
 | `shipTo`           | Receiver address                   | `address` object |                 | required      |         |
-| `packages`         | One or more `package` objects      | `package` object |                 | required      |         |
+| `packages`         | One or more `package` objects      | `package` object |                 | required (*)  |         |
 | `goodsDescription` | Description of items being shipped | string           |                 | required      |         |
 | `invoiceSubtotal`  | Value of items being shipped       | `amount` object  |                 | required      |         |
 | `saturdayDelivery` | "Saturday Delivery" option         | boolean          | `true`, `false` | optional      |`false`  |
+
+(*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
 ## `shipment` object meta
 | Name             | Description                                | Type    | Format               | Restrictions      |

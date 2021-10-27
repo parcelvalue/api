@@ -4,6 +4,13 @@ Create a new shipment, rate and confirm, retrieve shipment information, retrieve
 
 Methods : `GET`, `POST`
 
+## Save shipment
+### `POST /shipments/save`
+
+The request `JSON API` document should contain a `shipment` object as the document's `data` member.
+
+[Examples](/docs/Endpoints/Shipments/ExamplesSave.md)
+
 ## Rate shipment
 ### `POST /shipments/rate`
 

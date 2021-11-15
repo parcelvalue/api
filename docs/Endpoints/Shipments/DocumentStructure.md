@@ -22,6 +22,7 @@
 | `attributes.serviceDefinitionCode` | string   | required |
 | `attributes.accountId`             | string   | required |
 | `attributes.finalCost`             | `amount` | required |
+| `attributes.estimatedDeliveryDate` | string   | optional; ISO 8601 Date; nullable |
 
 ## `shipment` object attributes
 

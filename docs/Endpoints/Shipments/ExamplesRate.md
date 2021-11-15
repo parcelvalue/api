@@ -18,7 +18,7 @@ Content-Length: 1961
     "data": {
         "type": "shipment",
         "attributes": {
-            "shipDate": "2021-10-16",
+            "shipDate": "2021-11-16",
             "shipFrom": {
                 "name" : "Sender Name",
                 "address1": "Sender street 123",
@@ -71,6 +71,7 @@ Content-Length: 1961
                 "amount": "13.69",
                 "currency": "EUR"
             },
+            "useCod": false,
             "saturdayDelivery": false
         },
         "meta": {
@@ -78,11 +79,11 @@ Content-Length: 1961
     }
 }
 HTTP/1.1 202 Accepted
-Date: Fri, 15 Oct 2021 15:50:37 GMT
+Date: Mon, 15 Nov 2021 15:09:40 GMT
 Server: Apache
-Content-length: 1562
+Content-length: 2098
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
-{"jsonapi":{"version":"1.0"},"data":[{"type":"rate","id":"t2-DHL_WEB_SERVICES-EXP","attributes":{"carrierCode":"DHL_WEB_SERVICES","carrierName":"DHL Express (Web Services)","serviceCode":"EXP","serviceName":"DHL Express Worldwide","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_DHL_IT_OUTBOUND","finalCost":{"amount":76.48,"currency":"EUR"}}},{"type":"rate","id":"t2-TNT_ITALY-ECO","attributes":{"carrierCode":"TNT_ITALY","carrierName":"TNT Express (Italy)","serviceCode":"ECO","serviceName":"TNT Economy Express (Italy)","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_TNT_IT_EXP","finalCost":{"amount":35.15,"currency":"EUR"}}},{"type":"rate","id":"t2-TNT_ITALY-EXP","attributes":{"carrierCode":"TNT_ITALY","carrierName":"TNT Express (Italy)","serviceCode":"EXP","serviceName":"TNT Express (Italy)","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_TNT_IT_EXP","finalCost":{"amount":90.93,"currency":"EUR"}}},{"type":"rate","id":"t2-UPS_WEB_SERVICES-STD","attributes":{"carrierCode":"UPS_WEB_SERVICES","carrierName":"United Parcel Services (Web Services)","serviceCode":"STD","serviceName":"UPS Standard","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_MASTER_UPS_IT","finalCost":{"amount":57,"currency":"EUR"}}},{"type":"rate","id":"t2-UPS_WEB_SERVICES-XSS","attributes":{"carrierCode":"UPS_WEB_SERVICES","carrierName":"United Parcel Services (Web Services)","serviceCode":"XSS","serviceName":"UPS Express Saver","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_MASTER_UPS_IT","finalCost":{"amount":81.07,"currency":"EUR"}}}]}
+{"jsonapi":{"version":"1.0"},"data":[{"type":"rate","id":"t2-DHL_WEB_SERVICES-ECO","attributes":{"carrierCode":"DHL_WEB_SERVICES","carrierName":"DHL Express (Web Services)","serviceCode":"ECO","serviceName":"DHL Economy Select","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_DHL_IT_OUTBOUND","finalCost":{"amount":19.26,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-19"}},{"type":"rate","id":"t2-DHL_WEB_SERVICES-EXP","attributes":{"carrierCode":"DHL_WEB_SERVICES","carrierName":"DHL Express (Web Services)","serviceCode":"EXP","serviceName":"DHL Express Worldwide","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_DHL_IT_OUTBOUND","finalCost":{"amount":76.48,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-18"}},{"type":"rate","id":"t2-TNT_ITALY-ECO","attributes":{"carrierCode":"TNT_ITALY","carrierName":"TNT Express (Italy)","serviceCode":"ECO","serviceName":"TNT Economy Express (Italy)","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_TNT_IT_EXP","finalCost":{"amount":35.43,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-18"}},{"type":"rate","id":"t2-TNT_ITALY-EXP","attributes":{"carrierCode":"TNT_ITALY","carrierName":"TNT Express (Italy)","serviceCode":"EXP","serviceName":"TNT Express (Italy)","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_TNT_IT_EXP","finalCost":{"amount":91.65,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-17"}},{"type":"rate","id":"t2-UPS_WEB_SERVICES-STD","attributes":{"carrierCode":"UPS_WEB_SERVICES","carrierName":"United Parcel Services (Web Services)","serviceCode":"STD","serviceName":"UPS Standard","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_MASTER_UPS_IT","finalCost":{"amount":57.63,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-18"}},{"type":"rate","id":"t2-UPS_WEB_SERVICES-XSS","attributes":{"carrierCode":"UPS_WEB_SERVICES","carrierName":"United Parcel Services (Web Services)","serviceCode":"XSS","serviceName":"UPS Express Saver","serviceDefinitionCode":"DAY_DEFINITE","accountId":"PV_MASTER_UPS_IT","finalCost":{"amount":81.73,"currency":"EUR"},"estimatedDeliveryDate":"2021-11-17"}}]}
 ```

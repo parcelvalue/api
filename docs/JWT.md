@@ -1,6 +1,6 @@
 # JWT
 
-The `JWT` Hashing algorithm used by the ParcelValue API is  `HMAC SHA256`.
+The `JWT` Hashing algorithm used by the ParcelValue API is `HMAC SHA256`.
 
 The `JWT` will be constructed using the following data you should have been provided with (please check the [`API`](https://my.parcelvalue.eu) section of the ParcelValue client area for the up to date values to use): `clientId`, `clientKey`, `serverKey`.
 

@@ -64,15 +64,16 @@
 ## `address` object structure
 | Name         | Description          | Type   | Format                                            | Restrictions | Maximum length |
 |--------------|----------------------|--------|---------------------------------------------------|--------------|----------------|
-| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 255            |
-| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     | 50             |
-| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     | 40             |
+| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 35             |
+| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     | 30             |
+| `address2`   | Address              | string | Basic Latin string with no special characters (¹) | optional     | 30             |
+| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     | 30             |
 | `postalCode` | Postal code          | string |                                                   | required     | 30             |
 | `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) | 20             |
 | `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     | 2              |
-| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 40             |
-| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 40             |
-| `email`      | Contact email        | string |                                                   | required (⁵) | 40             |
+| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 35             |
+| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 25             |
+| `email`      | Contact email        | string |                                                   | required (⁵) | 50             |
 
 ## `package` object structure
 | Name          | Description        | Type                | Format                              | Restrictions |

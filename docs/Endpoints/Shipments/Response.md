@@ -18,4 +18,5 @@ The `shipment` meta will contain the `status` member (please see status codes be
 | Success   | `202 Accepted`    | Create shipment                       |
 | Error     | `400 Bad Request` |                                       |
 | Not Found | `404 Not Found`   |                                       |
-> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
+
+Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.

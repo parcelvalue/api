@@ -39,6 +39,7 @@
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
 ## `shipment` object meta
+
 | Name             | Description                                | Type    | Format               | Restrictions      |
 |------------------|--------------------------------------------|---------|----------------------|-------------------|
 | `rate`           | Shipment rate to use when confirming       | `rate` object |                | required for confirm endpoint |
@@ -48,6 +49,7 @@
 | `trackingNumber` | Tracking number                            | string  |                      | response only (⁷) |
 
 ### Shipment status codes
+
 | Code | Description                  |
 |------|------------------------------|
 | `-1` | Error                        |
@@ -55,6 +57,7 @@
 |  `3` | Shipment is confirmed        |
 
 ## `shipment` object links (response only)
+
 | Name       | Description             | Type   | Format                   | Restrictions      |
 |------------|-------------------------|--------|--------------------------|-------------------|
 | `self`     | Shipment resource URL   | string | `<apiURL>/shipments<id>` | response only     |
@@ -62,6 +65,7 @@
 
 
 ## `address` object structure
+
 | Name         | Description          | Type   | Format                                            | Restrictions | Maximum length |
 |--------------|----------------------|--------|---------------------------------------------------|--------------|----------------|
 | `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 35             |
@@ -76,6 +80,7 @@
 | `email`      | Contact email        | string |                                                   | required (⁵) | 50             |
 
 ## `package` object structure
+
 | Name          | Description        | Type                | Format                              | Restrictions |
 |---------------|--------------------|---------------------|-------------------------------------|--------------|
 | `weight`      | Package weight     | `weight` object     |                                     | required     |
@@ -83,12 +88,14 @@
 | `type`        | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
 
 ## `weight` object structure
+
 | Name    | Description  | Type   | Format                                           | Restrictions |
 |---------|--------------|--------|--------------------------------------------------|--------------|
 | `value` | Weight value | number | (³)(⁶)                                           | required     |
 | `units` | Weight units | number | Currently the only accepted value is 1, for "KG" | required     |
 
 ## `dimensions` object structure
+
 | Name     | Description      | Type   | Format                                           | Restrictions |
 |----------|------------------|--------|--------------------------------------------------|--------------|
 | `length` | Package length   | number | (³)(⁶)                                           | required     |
@@ -97,6 +104,7 @@
 | `units`  | Dimensions units | number | Currently the only accepted value is 1, for "KG" | required     |
 
 ## `amount` object structure
+
 | Name       | Description     | Type   | Format                                           | Restrictions |
 |------------|-----------------|--------|--------------------------------------------------|--------------|
 | `amount`   | Amount value    | number | (³)(⁶)                                           | required     |

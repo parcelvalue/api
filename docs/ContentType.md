@@ -85,4 +85,4 @@ An example of the structure of a request data for the `/shipments` endpoint woul
 }
 ```
 
-> Please see https://jsonapi.org for more information.
+Please see https://jsonapi.org for more information.

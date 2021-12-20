@@ -5,29 +5,35 @@ Retrieve information about the current client.
 Methods : `GET`, `HEAD`
 
 ## Request
+
 #### `GET` `/clients/current`
 #### `HEAD` `/clients/current`
 The request should contain no content body.
 
 ## Response
+
 On success, the API will return a `JSON API` document with a `client` object as the `data` member.  
 The `id` member of the `client` object will contain the ParcelValue client id.
 
-> Tip: in order to simply verify the authentication status, one could issue a `HEAD` request instead of `GET`.
+Tip: in order to simply verify the authentication status, one could issue a `HEAD` request instead of `GET`.
 
 ### Response codes
+
 | Result  | HTTP status code   |
 |---------|--------------------|
 | Success | `200 OK`           |
 | Error   | `401 Unauthorized` |
-> Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
 
-> Please see the [Authentication documentation](/docs/Authentication.md) for further information about the authentication process and error handling.
+Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
+
+Please see the [Authentication documentation](/docs/Authentication.md) for further information about the authentication process and error handling.
 
 ---
+
 ## Response document structure
 
 ### `client` object attributes
+
 | Name   | Description | Type  |
 |--------|-------------|-------|
 | `name` | Client name |string |

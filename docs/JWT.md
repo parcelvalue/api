@@ -45,6 +45,7 @@ For an example of generating a JWT in PHP please see the project [ParcelValue AP
 ---
 
 The JWT should be sent via a "`Bearer`" `Authorization` HTTP Header, like so:
+
 ```
 Authorization: Bearer <JWT>
 ```

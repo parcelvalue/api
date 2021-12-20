@@ -8,7 +8,7 @@
 
 ## ParcelValue API
 
-> **For an up to date version of this documentation please visit [https://github.com/parcelvalue/api](https://github.com/parcelvalue/api)**.
+For the latest version of this documentation please visit [https://github.com/parcelvalue/api](https://github.com/parcelvalue/api).
 
 ---
 

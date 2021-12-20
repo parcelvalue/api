@@ -66,5 +66,5 @@ The request should contain no content body.
 
 ## Resources
 
-* [Response](/docs/Endpoints/Shipments/Response.md)
 * [Document Structure](/docs/Endpoints/Shipments/DocumentStructure.md)
+* [Response](/docs/Endpoints/Shipments/Response.md)

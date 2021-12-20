@@ -32,8 +32,10 @@ The signature will be created using the `serverKey` as the secret.
 
 For instructions on how to create the `JWT` please see the [official documentation](https://jwt.io/introduction/)
 
-There are `JWT` libraries for Token signing/verification available for a multitude of programming and scripting languages:  
+There are `JWT` libraries for Token signing/verification available for a multitude of programming and scripting languages:
+
 .NET, Python, Node.js, Java, JavaScript, Perl, Ruby, Elixir, Erlang, Go, Groovy, Haskell, Haxe, Rust, Lua, Scala, D, Clojure, Objective-C, Swift, C, C++, kdb+/Q, Delphi, PHP, Crystal, 1C, PostgreSQL.  
+
 Please see https://jwt.io/ for more information.
 
 You can also use the [Official JWT Debugger](https://jwt.io/) to decode, verify, and generate JWTs.

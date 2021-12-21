@@ -11,6 +11,8 @@ Request content data should follow the `JSON API` specification.
 
 The currently supported JSON API version is `1.0`.
 
+For more information please visit [JSON:API &mdash; A specification for building APIs in JSON](https://jsonapi.org/).
+
 ## Examples
 
 An example of the structure of a request data for the `/shipments` endpoint would be:

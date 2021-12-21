@@ -1,6 +1,8 @@
 # Authentication
 
-Authentication is done via a `JSON Web Token` (`JWT`) sent via a Bearer Authorization header.
+## API URL
+
+The URL to call is composed of "apiUrl" + "apiVersion" + "endpoint".
 
 ## SSL
 
@@ -8,6 +10,8 @@ SSL is required for all API calls.
 The APi will return a `400 Bad Request` in case SSL is not used.
 
 ## JWT
+
+Authentication is done via a `JSON Web Token` (`JWT`) sent via a Bearer Authorization header.
 
 JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 

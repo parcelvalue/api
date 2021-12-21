@@ -110,11 +110,18 @@
 | `amount`   | Amount value    | number | (³)(⁶)                                           | required     |
 | `currency` | Amount currency | string | Currently the only accepted value is "EUR"       | required     |
 
-(¹) Data containing special characters will be rejected;  
-(²) For `US`, `phone` should start with 1 and contain 11 digits;  
-(³) Numbers containing non-numeric characters will be rejected; Please make sure to use the point (`.`) as decimal separator;  
-(⁴) `state` is required only for the following countries: IT, CA, US;  
-(⁵) `email` is required for the `shipFrom` address;  
-(⁶) Any value using a fractional part must use a period as the decimal separator;  
+(¹) Data containing special characters will be rejected;
+
+(²) For `US`, `phone` should start with 1 and contain 11 digits;
+
+(³) Numbers containing non-numeric characters will be rejected; Please make sure to use the point (`.`) as decimal separator;
+
+(⁴) `state` is required only for the following countries: IT, CA, US;
+
+(⁵) `email` is required for the `shipFrom` address;
+
+(⁶) Any value using a fractional part must use a period as the decimal separator;
+
 (⁷) This field is only returned for completed shipments, otherwise the value is `null`;
+
 (⁸) This field is only returned for completed shipments, otherwise the field is not present in the response;

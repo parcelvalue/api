@@ -4,6 +4,8 @@
 
 The URL to call is composed of "apiUrl" + "apiVersion" + "endpoint".
 
+The values can be found in the ParcelValue client area and are dependent on the API environment.
+
 ## SSL
 
 SSL is required for all API calls.

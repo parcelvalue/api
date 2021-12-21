@@ -8,7 +8,7 @@ A Postman Collection is available here: [ParcelValue API Postman Collection](htt
 
 Some examples of browser extensions:  
 
-* [Restlet Client](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm  ) (Google Chrome)  
+* [Talend API Tester](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm  ) (Google Chrome)  
 * [RESTClient](https://addons.mozilla.org/en-US/firefox/addon/restclient/) (Mozilla Firefox)
 
 ---

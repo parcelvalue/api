@@ -19,12 +19,6 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 ## ParcelValue API documentation
 
-### New in Version 3
-
-* Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`.
-* Removed unused shipment object attributes `useCod`, `saturdayDelivery`.
-* New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`.
-
 ### General information
 
 * [Content type](docs/ContentType.md)
@@ -60,3 +54,14 @@ For code checking and validation, please see the [Developer installation informa
 * [ParcelValue API Postman Collection](https://github.com/parcelvalue/postman-collection)
 
 ---
+
+### Change log
+
+#### v3
+
+* Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`;
+* Removed unused shipment object attribute `useCod`;
+
+#### v3.3.0
+* Removed unused shipment object attribute `saturdayDelivery`;
+* New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`;

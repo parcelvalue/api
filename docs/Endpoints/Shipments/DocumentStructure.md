@@ -26,15 +26,18 @@
 
 ## `shipment` object attributes
 
-| Name               | Description                        | Type             | Format          | Restrictions  | Default |
-|--------------------|------------------------------------|------------------|-----------------|---------------|---------|
-| `shipDate`         | Departure date                     | string           | ISO 8601 Date   | required      |         |
-| `shipFrom`         | Sender address                     | `address` object |                 | required      |         |
-| `shipTo`           | Receiver address                   | `address` object |                 | required      |         |
-| `packages`         | One or more `package` objects      | `package` object |                 | required (*)  |         |
-| `goodsDescription` | Description of items being shipped | string           |                 | required      |         |
-| `invoiceSubtotal`  | Value of items being shipped       | `amount` object  |                 | required      |         |
-| `saturdayDelivery` | "Saturday Delivery" option         | boolean          | `true`, `false` | optional      |`false`  |
+| Name                  | Description                                   | Type             | Format          | Restrictions  | Default |
+|-----------------------|-----------------------------------------------|------------------|-----------------|---------------|---------|
+| `shipDate`            | Departure date                                | string           | ISO 8601 Date   | required      |         |
+| `shipFrom`            | Sender address                                | `address` object |                 | required      |         |
+| `shipTo`              | Receiver address                              | `address` object |                 | required      |         |
+| `packages`            | One or more `package` objects                 | `package` object |                 | required (*)  |         |
+| `goodsDescription`    | Description of items being shipped            | string           |                 | required      |         |
+| `invoiceSubtotal`     | Value of items being shipped                  | `amount` object  |                 | required      |         |
+| `customerReference`   | Customer reference (free text)                | string           |                 | optional      |         |
+| `specialInstructions` | Special instructions for carrier              | string           |                 | optional      |         |
+| `confirmationEmail`   | Send confirmation with labels to this address | string           |                 | optional      |         |
+| `booking`             | Use collection booking                        | boolean          | `true`, `false` | optional      | `true`  |
 
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 

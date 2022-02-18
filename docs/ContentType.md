@@ -78,7 +78,10 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "saturdayDelivery": true
+            "customerReference": "REF 123",
+            "specialInstructions": "Second door on the left",
+            "confirmationEmail": "documents@ship.from",
+            "booking": true
         },
         "meta": {
             "service": "express"

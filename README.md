@@ -22,7 +22,8 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 ### New in Version 3
 
 * Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`.
-* Removed unused shipment object attribute `useCod`.
+* Removed unused shipment object attributes `useCod`, `saturdayDelivery`.
+* New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`.
 
 ### General information
 

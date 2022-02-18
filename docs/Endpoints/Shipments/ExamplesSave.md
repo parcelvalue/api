@@ -7,10 +7,12 @@ POST /v3-testing/shipments/save HTTP/1.1
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
+User-Agent: PostmanRuntime/7.26.8
+Postman-Token: 22e5e218-1027-40f5-b919-4563f1eebba1
 Host: api.parcelvalue.eu
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
-Content-Length: 1209
+Content-Length: 1332
 {
     "jsonapi": {
         "version": "1.0"
@@ -18,7 +20,7 @@ Content-Length: 1209
     "data": {
         "type": "shipment",
         "attributes": {
-            "shipDate": "2021-10-28",
+            "shipDate": "2022-02-19",
             "shipFrom": {
                 "name" : "Sender Name",
                 "address1": "Sender street 123",
@@ -45,22 +47,24 @@ Content-Length: 1209
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": false,
-            "saturdayDelivery": false
+            "customerReference": "REF 123",
+            "specialInstructions": "Second door on the left",
+            "confirmationEmail": "documents@ship.from",
+            "booking": true
         },
         "meta": {
         }
     }
 }
 HTTP/1.1 202 Accepted
-Date: Wed, 27 Oct 2021 14:08:58 GMT
+Date: Fri, 18 Feb 2022 15:15:25 GMT
 Server: Apache
-Location: https://api.parcelvalue.eu/v3-testing/shipments/18B09923FE050D859B24539257783A116BBA7A42D3D7449625B116AB5BC058E1
-Content-length: 914
+Location: https://api.parcelvalue.eu/v3-testing/shipments/<SHIPMENTID>
+Content-length: 1024
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"18B09923FE050D859B24539257783A116BBA7A42D3D7449625B116AB5BC058E1","attributes":{"shipDate":"2021-10-28","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"saturdayDelivery":false},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/18B09923FE050D859B24539257783A116BBA7A42D3D7449625B116AB5BC058E1"},"meta":{"status":0,"reference":"100002021094","trackingNumber":null}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<SHIPMENTID>","attributes":{"shipDate":"2022-02-19","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[],"goodsDescription":"Items from order #1","customerReference":"REF 123","specialInstructions":"Second door on the left","confirmationEmail":"documents@ship.from","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"booking":true},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/<SHIPMENTID>"},"meta":{"status":0,"reference":"100002021123","trackingNumber":null}}}
 ```
 
 ## Save shipment (with packages)
@@ -70,10 +74,12 @@ POST /v3-testing/shipments/save HTTP/1.1
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
+User-Agent: PostmanRuntime/7.26.8
+Postman-Token: be51c8da-d578-405d-857b-8d6ad79375ce
 Host: api.parcelvalue.eu
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
-Content-Length: 1961
+Content-Length: 2084
 {
     "jsonapi": {
         "version": "1.0"
@@ -81,7 +87,7 @@ Content-Length: 1961
     "data": {
         "type": "shipment",
         "attributes": {
-            "shipDate": "2021-10-28",
+            "shipDate": "2022-02-19",
             "shipFrom": {
                 "name" : "Sender Name",
                 "address1": "Sender street 123",
@@ -134,20 +140,22 @@ Content-Length: 1961
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "useCod": false,
-            "saturdayDelivery": false
+            "customerReference": "REF 123",
+            "specialInstructions": "Second door on the left",
+            "confirmationEmail": "documents@ship.from",
+            "booking": true
         },
         "meta": {
         }
     }
 }
 HTTP/1.1 202 Accepted
-Date: Wed, 27 Oct 2021 14:13:59 GMT
+Date: Fri, 18 Feb 2022 15:22:23 GMT
 Server: Apache
-Location: https://api.parcelvalue.eu/v3-testing/shipments/8418E6184996BF74534EDCC5794FF50C3F76F375E80FA9873AC574E70FA2846E
-Content-length: 1159
+Location: https://api.parcelvalue.eu/v3-testing/shipments/<SHIPMENTID>
+Content-length: 1269
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"8418E6184996BF74534EDCC5794FF50C3F76F375E80FA9873AC574E70FA2846E","attributes":{"shipDate":"2021-10-28","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"saturdayDelivery":false},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/8418E6184996BF74534EDCC5794FF50C3F76F375E80FA9873AC574E70FA2846E"},"meta":{"status":0,"reference":"100002021095","trackingNumber":null}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<SHIPMENTID>","attributes":{"shipDate":"2022-02-19","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","customerReference":"REF 123","specialInstructions":"Second door on the left","confirmationEmail":"documents@ship.from","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"booking":true},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/<SHIPMENTID>"},"meta":{"status":0,"reference":"100002021125","trackingNumber":null}}}
 ```

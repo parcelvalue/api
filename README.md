@@ -63,5 +63,10 @@ For code checking and validation, please see the [Developer installation informa
 * Removed unused shipment object attribute `useCod`;
 
 #### v3.3.0
+
 * Removed unused shipment object attribute `saturdayDelivery`;
 * New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`;
+
+#### v3.4.0
+
+* Add insurance support; new fields: `insuranceDescription`, `insuranceValue`;

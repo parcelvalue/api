@@ -74,6 +74,8 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                 "type": "CARTON"
             }],
             "goodsDescription": "Items from order #1",
+            "insuranceDescription": "Testers",
+            "insuranceValue": "123.45",
             "invoiceSubtotal": {
                 "amount": "13.69",
                 "currency": "EUR"

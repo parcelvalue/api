@@ -16,15 +16,15 @@ Some examples of browser extensions:
 
 The most basic test is to check if the authentication is successful.
 
-Endpoint: [`/clients/current`](/docs/Endpoints/Clients/Current.md)  
+Endpoint: [`/clients/current`](docs/Endpoints/Clients/Current.md)  
 Methods : `GET`, `HEAD`
 
-Please see the [`/clients/current`](/docs/Endpoints/Clients/Current.md) endpoint documentation for more information and code examples.
+Please see the [`/clients/current`](docs/Endpoints/Clients/Current.md) endpoint documentation for more information and code examples.
 
 ---
 ## Using the `/test` endpoint
 
-Endpoint: [`/test`](/docs/Endpoints/Test.md)  
+Endpoint: [`/test`](docs/Endpoints/Test.md)  
 Methods : `GET`, `HEAD`, `POST`
 
-Please see the [`/test`](/docs/Endpoints/Test.md) endpoint documentation for more information and code examples.
+Please see the [`/test`](docs/Endpoints/Test.md) endpoint documentation for more information and code examples.

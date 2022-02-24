@@ -24,9 +24,9 @@ Tip: in order to simply verify the authentication status, one could issue a `HEA
 | Success | `200 OK`           |
 | Error   | `401 Unauthorized` |
 
-Please see the [Error Handling documentation](docs/ErrorHandling.md) for further information about errors.
+Please see the [Error Handling documentation](/docs/ErrorHandling.md) for further information about errors.
 
-Please see the [Authentication documentation](docs/Authentication.md) for further information about the authentication process and error handling.
+Please see the [Authentication documentation](/docs/Authentication.md) for further information about the authentication process and error handling.
 
 ---
 

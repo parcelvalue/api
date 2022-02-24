@@ -21,21 +21,21 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 ### General information
 
-* [Content type](docs/ContentType.md)
-* [Error handling](docs/ErrorHandling.md)
-* [Authentication](docs/Authentication.md)
-* [Testing the API](docs/Testing.md)
+* [Content type](/docs/ContentType.md)
+* [Error handling](/docs/ErrorHandling.md)
+* [Authentication](/docs/Authentication.md)
+* [Testing the API](/docs/Testing.md)
 
 ### Endpoints
 
 * Test
-    * [`/test`](docs/Endpoints/Test.md)
+    * [`/test`](/docs/Endpoints/Test.md)
 
 * Clients
-    * [`/clients/current`](docs/Endpoints/Clients/Current.md)
+    * [`/clients/current`](/docs/Endpoints/Clients/Current.md)
 
 * Shipments
-    * [`/shipments`](docs/Endpoints/Shipments/Shipments.md)
+    * [`/shipments`](/docs/Endpoints/Shipments/Shipments.md)
 
 ---
 
@@ -43,7 +43,7 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 This project contains the API documentation.  
 The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is usually not needed.  
-For code checking and validation, please see the [Developer installation information](docs/DeveloperInstallation.md)
+For code checking and validation, please see the [Developer installation information](/docs/DeveloperInstallation.md)
 
 
 ---

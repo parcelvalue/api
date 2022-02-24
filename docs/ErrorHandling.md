@@ -10,6 +10,7 @@ Additionally, for authentication errors, the response will also contain a `WWW-A
 Please see the [Authentication documentation](docs/Authentication.md) for further information.
 
 ## `error` object attributes
+
 | Name     |                                                                                 |
 |----------|---------------------------------------------------------------------------------|
 | `status` | "the HTTP status code applicable to this problem, expressed as a string value." |

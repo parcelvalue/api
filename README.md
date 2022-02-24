@@ -8,7 +8,7 @@
 
 ## ParcelValue API
 
-For the latest version of this documentation please visit [https://github.com/parcelvalue/api](https://github.com/parcelvalue/api).
+For the latest version of this documentation please visit [https://parcelvalue.github.io/api/](https://parcelvalue.github.io/api/).
 
 ---
 
@@ -70,3 +70,7 @@ For code checking and validation, please see the [Developer installation informa
 #### v3.4.0
 
 * Add insurance support; new fields: `insuranceDescription`, `insuranceValue`;
+
+#### v3.5.0
+
+* New meta option for one-step endpoint: `scheduledProcessing`;

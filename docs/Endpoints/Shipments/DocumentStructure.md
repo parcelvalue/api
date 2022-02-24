@@ -47,13 +47,31 @@
 
 ## `shipment` object meta
 
-| Name             | Description                                | Type    | Format               | Restrictions      |
-|------------------|--------------------------------------------|---------|----------------------|-------------------|
-| `rate`           | Shipment rate to use when confirming       | `rate` object |                | required for confirm endpoint |
-| `service`        | Shipment service option                    | string  | `express`, `economy` | required for "one-step" endpoint |
-| `status`         | Shipment status code                       | integer | `-1`, `0`, `3`       | response only     |
-| `reference`      | Reference number (used in the Client area) | string  |                      | response only (⁷) |
-| `trackingNumber` | Tracking number                            | string  |                      | response only (⁷) |
+| Name                  | Description                                | Type          | Format               | Restrictions                     |
+|-----------------------|--------------------------------------------|---------------|----------------------|----------------------------------|
+| `rate`                | Shipment rate to use when confirming       | `rate` object |                      | required for confirm endpoint    |
+| `scheduledProcessing` | Scheduled processing option                | boolean       | `true`, `false`      | (*)
+| `service`             | Shipment service option                    | string        | `express`, `economy` | required for "one-step" endpoint |
+| `status`              | Shipment status code                       | integer       | `-1`, `0`, `3`       | response only                    |
+| `reference`           | Reference number (used in the Client area) | string        |                      | response only (⁷)                |
+| `trackingNumber`      | Tracking number                            | string        |                      | response only (⁷)                |
+
+#### (*) `scheduledProcessing`
+
+Used only in the "one-step" endpoint;
+
+##### `true`
+
+* default option;
+* shipment processing is asynchronous;
+* separate call needed in order to obtain the result of shipment processing;
+* response code `202 Accepted`;
+
+##### `false`
+
+* shipment processing is done immediately and result is returned in the response;
+* response code `202 Created`;
+* response time can be longer as a result of the processing overhead;
 
 ### Shipment status codes
 

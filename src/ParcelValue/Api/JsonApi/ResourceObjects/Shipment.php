@@ -28,6 +28,11 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         return (string) $this->getMeta('reference');
     }
 
+    public function getScheduledProcessing(): bool
+    {
+        return (bool) $this->getMeta('scheduledProcessing');
+    }
+
     public function getService(): string
     {
         return (string) $this->getMeta('service');
@@ -36,6 +41,12 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
     public function getStatus(): int
     {
         return (int) $this->getMeta('status');
+    }
+
+    public function setScheduledProcessing(bool $scheduledProcessing): bool
+    {
+        $this->setMeta('scheduledProcessing', $scheduledProcessing);
+        return true;
     }
 
     public function setService(string $service): bool

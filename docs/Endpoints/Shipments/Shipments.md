@@ -9,7 +9,7 @@ Methods : `GET`, `POST`
 
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 
-[Examples](/docs/Endpoints/Shipments/ExamplesSave.md)
+[Examples](ExamplesSave.md)
 
 ## Rate shipment
 ### `POST /shipments/rate`

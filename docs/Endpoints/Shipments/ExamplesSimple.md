@@ -285,3 +285,7 @@ Connection: close
 Content-Type: application/vnd.api+json
 {"jsonapi":{"version":"1.0"},"errors":[{"status":400,"title":"Bad Request","detail":"Missing required data: 'data.meta.service'."}]}
 ```
+
+---
+
+[README](../../../README.md)

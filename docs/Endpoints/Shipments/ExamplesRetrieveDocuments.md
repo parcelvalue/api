@@ -78,3 +78,7 @@ Content-Type: application/vnd.api+json
 
 {"jsonapi":{"version":"1.0"},"errors":[{"status":404,"title":"Not Found","detail":"Shipment not found"}]}
 ```
+
+---
+
+[README](../../../README.md)

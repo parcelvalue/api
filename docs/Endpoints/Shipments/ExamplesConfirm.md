@@ -211,3 +211,7 @@ Connection: close
 Content-Type: application/vnd.api+json
 {"jsonapi":{"version":"1.0"},"errors":[{"status":400,"title":"Bad Request","detail":"Price is different. Original price: 123.45; updated price: 76.48"}]}
 ```
+
+---
+
+[README](../../../README.md)

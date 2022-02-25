@@ -150,3 +150,7 @@ Used only in the "one-step" endpoint;
 (⁷) This field is only returned for completed shipments, otherwise the value is `null`;
 
 (⁸) This field is only returned for completed shipments, otherwise the field is not present in the response;
+
+---
+
+[README](../../../README.md)

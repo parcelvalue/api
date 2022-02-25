@@ -4,7 +4,7 @@ Test the ParcelValue API.
 
 Methods : `GET`, `HEAD`
 
-Please see also [Testing the API](/docs/Testing.md).
+Please see also [Testing the API](../Testing.md).
 
 The test endpoint simply returns the data received.
 
@@ -68,3 +68,7 @@ Content-Type: application/vnd.api+json
 
 {"jsonapi":{"version":"1.0"},"data":{"type":"test","id":null,"attributes":{"query":{"key1":"value1","key2":"value2"}},"meta":{"method":"GET"}}}
 ```
+
+---
+
+[README](../../README.md)

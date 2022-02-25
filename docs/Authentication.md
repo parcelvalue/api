@@ -37,3 +37,7 @@ Please see the [Error Handling documentation](ErrorHandling.md) for further info
 | "Invalid token: <further details>"        | The `JSON WEB Token` is not valid. Further details will e provided.         |
 | "Token is missing required data"          | The `JSON WEB Token` is missing required data.                              |
 | "Authorization failed"                    | The `JSON WEB Token` is valid, however the authentication was unsuccessful. |
+
+---
+
+[README](../README.md)

@@ -7,7 +7,7 @@ Please see the [`JSON API` Error documentation](https://jsonapi.org/format/#erro
 
 Additionally, for authentication errors, the response will also contain a `WWW-Authenticate` header containing information about the error.  
 
-Please see the [Authentication documentation](/docs/Authentication.md) for further information.
+Please see the [Authentication documentation](Authentication.md) for further information.
 
 ## `error` object attributes
 
@@ -16,3 +16,7 @@ Please see the [Authentication documentation](/docs/Authentication.md) for furth
 | `status` | "the HTTP status code applicable to this problem, expressed as a string value." |
 | `title`  | "a short, human-readable summary of the problem"                                |
 | `detail` | "a human-readable explanation specific to this occurrence of the problem"       |
+
+---
+
+[README](../README.md)

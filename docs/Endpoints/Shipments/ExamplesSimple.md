@@ -18,7 +18,6 @@ Content-Length: 2251
     },
     "data": {
         "type": "shipment",
-        "id": 123,
         "attributes": {
             "shipDate": "2022-02-25",
             "shipFrom": {
@@ -115,7 +114,6 @@ Content-Length: 2252
     },
     "data": {
         "type": "shipment",
-        "id": 123,
         "attributes": {
             "shipDate": "2022-02-25",
             "shipFrom": {
@@ -212,7 +210,6 @@ Content-Length: 2116
     },
     "data": {
         "type": "shipment",
-        "id": 123,
         "attributes": {
             "shipDate": "2022-02-19",
             "shipFrom": {

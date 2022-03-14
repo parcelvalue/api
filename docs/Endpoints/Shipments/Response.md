@@ -12,6 +12,7 @@ For shipment creation, the response will also include a `Location` header identi
 The `shipment` meta will contain the `status` member (please see status codes below).
 
 ## Response codes
+
 | Result    | HTTP status code  | Notes                                 |
 |-----------|-------------------|---------------------------------------|
 | Success   | `200 OK`          | Retrieve shipment, retrieve documents |

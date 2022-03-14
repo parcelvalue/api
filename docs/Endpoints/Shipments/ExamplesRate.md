@@ -7,8 +7,6 @@ POST /v3-testing/shipments/rate HTTP/1.1
 Content-Type: application/vnd.api+json
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
-User-Agent: PostmanRuntime/7.26.8
-Postman-Token: 17824b77-9c78-48fd-be6e-810b2757f500
 Host: api.parcelvalue.eu
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive

@@ -74,3 +74,7 @@ For code checking and validation, please see the [Developer installation informa
 #### v3.5.0
 
 * New meta option for one-step endpoint: `scheduledProcessing`;
+
+#### v3.6.0
+
+* New shipment object meta property: `carrierName`

@@ -53,6 +53,7 @@
 | `scheduledProcessing` | Scheduled processing option                | boolean       | `true`, `false`      | (*)
 | `service`             | Shipment service option                    | string        | `express`, `economy` | required for "one-step" endpoint |
 | `status`              | Shipment status code                       | integer       | `-1`, `0`, `3`       | response only                    |
+| `carrierName`         | Carrier name                               | string        |                      | response only (⁷)                |
 | `reference`           | Reference number (used in the Client area) | string        |                      | response only (⁷)                |
 | `trackingNumber`      | Tracking number                            | string        |                      | response only (⁷)                |
 

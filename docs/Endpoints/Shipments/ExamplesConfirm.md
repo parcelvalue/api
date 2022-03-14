@@ -10,7 +10,7 @@ Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
-Content-Length: 2754
+Content-Length: 3023
 {
     "jsonapi": {
         "version": "1.0"
@@ -18,7 +18,7 @@ Content-Length: 2754
     "data": {
         "type": "shipment",
         "attributes": {
-            "shipDate": "2021-10-16",
+            "shipDate": "2022-03-15",
             "shipFrom": {
                 "name": "Sender Name",
                 "address1": "Sender street 123",
@@ -69,11 +69,16 @@ Content-Length: 2754
                 }
             ],
             "goodsDescription": "Items from order #1",
+            "insuranceDescription": "Testers",
+            "insuranceValue": "123.45",
             "invoiceSubtotal": {
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "saturdayDelivery": false
+            "customerReference": "REF 123",
+            "specialInstructions": "Second door on the left",
+            "confirmationEmail": "documents@ship.from",
+            "booking": true
         },
         "meta": {
             "rate": {
@@ -87,9 +92,10 @@ Content-Length: 2754
                     "serviceDefinitionCode": "DAY_DEFINITE",
                     "accountId": "PV_DHL_IT_OUTBOUND",
                     "finalCost": {
-                        "amount": 76.48,
+                        "amount": 76.21,
                         "currency": "EUR"
-                    }
+                    },
+                    "estimatedDeliveryDate": "2022-02-22"
                 }
             }
         }
@@ -97,14 +103,14 @@ Content-Length: 2754
     "included": []
 }
 HTTP/1.1 202 Accepted
-Date: Fri, 15 Oct 2021 15:53:59 GMT
+Date: Mon, 14 Mar 2022 09:30:15 GMT
 Server: Apache
-Location: https://api.parcelvalue.eu/v3-testing/shipments/<SHIPMENID>
-Content-length: 1242
+Location: https://api.parcelvalue.eu/v3-testing/shipments/<SHIPMENTID>
+Content-length: 1482
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
-{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<SHIPMENID>","attributes":{"shipDate":"2021-10-16","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"saturdayDelivery":false},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/<SHIPMENID>","tracking":"https:\/\/tracking.qapla.it\/25d455fd2dd011ecb93442010a8400f1"},"meta":{"status":3,"reference":"100002021086","trackingNumber":"1242222822"}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"shipment","id":"<SHIPMENTID>","attributes":{"shipDate":"2022-03-15","shipFrom":{"name":"Sender Name","address1":"Sender street 123","city":"Milano","postalCode":20129,"state":"MI","country":"IT","contact":"Sender Contactname","phone":"1234567890","email":"sender@ship.from"},"shipTo":{"name":"Receiver Name","address1":"Receiver address 123","city":"Muenchen","postalCode":80331,"country":"DE","contact":"Receiver Contactname","phone":"987654321","email":"receiver@ship.to"},"packages":[{"weight":{"value":"1.2","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"},{"weight":{"value":"1.9","units":"1"},"dimensions":{"length":"32","width":"33","height":"34","units":"1"},"type":"CARTON"}],"goodsDescription":"Items from order #1","insuranceDescription":"Testers","insuranceValue":"123.45","customerReference":"REF 123","specialInstructions":"Second door on the left","confirmationEmail":"documents@ship.from","invoiceSubtotal":{"amount":"13.69","currency":"EUR"},"booking":true},"links":{"self":"https:\/\/api.parcelvalue.eu\/v3-testing\/shipments\/<SHIPMENTID>","tracking":"https:\/\/tracking.qapla.it\/6472e153a37911ec8d3842010a840066"},"meta":{"scheduledProcessing":false,"status":3,"reference":"100002021208","carrierName":"DHL Express (Web Services)","trackingNumber":"1271145901"}}}
 ```
 
 ## Confirm shipment: error - price is different
@@ -117,7 +123,7 @@ Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
-Content-Length: 2755
+Content-Length: 3023
 {
     "jsonapi": {
         "version": "1.0"
@@ -125,7 +131,7 @@ Content-Length: 2755
     "data": {
         "type": "shipment",
         "attributes": {
-            "shipDate": "2021-10-16",
+            "shipDate": "2022-03-15",
             "shipFrom": {
                 "name": "Sender Name",
                 "address1": "Sender street 123",
@@ -176,11 +182,16 @@ Content-Length: 2755
                 }
             ],
             "goodsDescription": "Items from order #1",
+            "insuranceDescription": "Testers",
+            "insuranceValue": "123.45",
             "invoiceSubtotal": {
                 "amount": "13.69",
                 "currency": "EUR"
             },
-            "saturdayDelivery": false
+            "customerReference": "REF 123",
+            "specialInstructions": "Second door on the left",
+            "confirmationEmail": "documents@ship.from",
+            "booking": true
         },
         "meta": {
             "rate": {
@@ -194,22 +205,23 @@ Content-Length: 2755
                     "serviceDefinitionCode": "DAY_DEFINITE",
                     "accountId": "PV_DHL_IT_OUTBOUND",
                     "finalCost": {
-                        "amount": 123.45,
+                        "amount": 80.02,
                         "currency": "EUR"
-                    }
+                    },
+                    "estimatedDeliveryDate": "2022-02-22"
                 }
             }
         }
     },
     "included": []
 }
-HTTP/1.1 400 Bad Request
-Date: Fri, 15 Oct 2021 15:54:40 GMT
+HTTP/1.1 503 Service Unavailable
+Date: Mon, 14 Mar 2022 09:29:21 GMT
 Server: Apache
-Content-length: 153
+Content-length: 160
 Connection: close
 Content-Type: application/vnd.api+json
-{"jsonapi":{"version":"1.0"},"errors":[{"status":400,"title":"Bad Request","detail":"Price is different. Original price: 123.45; updated price: 76.48"}]}
+{"jsonapi":{"version":"1.0"},"errors":[{"status":503,"title":"Service Unavailable","detail":"Price is different. Original price: 80.02; updated price: 76.21"}]}
 ```
 
 ---

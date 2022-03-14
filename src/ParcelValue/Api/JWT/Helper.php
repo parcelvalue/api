@@ -39,6 +39,17 @@ final class Helper
             throw new JwtException('Token is missing required data.');
         }
 
-        return new Payload($payload->sub, $payload->clientKey);
+        $sub = (string) $payload->sub;
+        $clientKey = (string) $payload->clientKey;
+
+        if (!$sub) {
+            throw new JwtException('Invalid token part: "sub".');
+        }
+
+        if (!$clientKey) {
+            throw new JwtException('Invalid token part: "clientKey".');
+        }
+
+        return new Payload($sub, $clientKey);
     }
 }

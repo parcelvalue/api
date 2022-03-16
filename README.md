@@ -51,7 +51,6 @@ For code checking and validation, please see the [Developer installation informa
 ### Related projects
 
 * [ParcelValue API Client](https://github.com/parcelvalue/api-client)
-* [ParcelValue API Postman Collection](https://github.com/parcelvalue/postman-collection)
 
 ---
 

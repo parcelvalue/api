@@ -70,6 +70,7 @@ The request should contain no content body.
 The request should contain no content body.
 
 [Examples](ExamplesRetrieveTracking.md)
+
 ---
 
 ## Resources

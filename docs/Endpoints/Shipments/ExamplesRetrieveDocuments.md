@@ -3,7 +3,7 @@
 ## Retrieve shipment documents: success
 
 ```
-GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<apiShipmentId>/documents HTTP/1.1
 Authorization: Bearer <JWT>
 Accept: application/vnd.api+json
 Host: api.parcelvalue.eu
@@ -16,14 +16,14 @@ Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/vnd.api+json
 
-{"jsonapi":{"version":"1.0"},"data":{"type":"documents","id":"<SHIPMENTID>","attributes":{"contentType":"<CONTENTTYPE>","fileName":"<FILENAME>","fileData":"<FILEDATA>"}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"documents","id":"<apiShipmentId>","attributes":{"contentType":"<CONTENTTYPE>","fileName":"<FILENAME>","fileData":"<FILEDATA>"}}}
 ```
 
 ## Retrieve shipment documents: error
 > Shipment is in error (status -1), so no documents are  available
 
 ```
-GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<apiShipmentId>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -43,7 +43,7 @@ Content-Type: application/vnd.api+json
 > Shipment is not yet processed (status 0), so no documents are  available
 
 ```
-GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<apiShipmentId>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu
@@ -63,7 +63,7 @@ Content-Type: application/vnd.api+json
 > Shipment doesn't exist
 
 ```
-GET /v3/shipments/<SHIPMENTID>/documents HTTP/1.1
+GET /v3/shipments/<apiShipmentId>/documents HTTP/1.1
 Accept: application/vnd.api+json
 Authorization: Bearer <JWT>
 Host: api.parcelvalue.eu

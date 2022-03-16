@@ -47,15 +47,17 @@
 
 ## `shipment` object meta
 
-| Name                  | Description                                | Type          | Format               | Restrictions                     |
-|-----------------------|--------------------------------------------|---------------|----------------------|----------------------------------|
-| `rate`                | Shipment rate to use when confirming       | `rate` object |                      | required for confirm endpoint    |
-| `scheduledProcessing` | Scheduled processing option                | boolean       | `true`, `false`      | (*)
-| `service`             | Shipment service option                    | string        | `express`, `economy` | required for "one-step" endpoint |
-| `status`              | Shipment status code                       | integer       | `-1`, `0`, `3`       | response only                    |
-| `carrierName`         | Carrier name                               | string        |                      | response only (⁷)                |
-| `reference`           | Reference number (used in the Client area) | string        |                      | response only (⁷)                |
-| `trackingNumber`      | Tracking number                            | string        |                      | response only (⁷)                |
+| Name                  | Description                                | Type            | Format               | Restrictions                     |
+|-----------------------|--------------------------------------------|-----------------|----------------------|----------------------------------|
+| `rate`                | Shipment rate to use when confirming       | `rate` object   |                      | required for confirm endpoint    |
+| `scheduledProcessing` | Scheduled processing option                | boolean         | `true`, `false`      | (*)
+| `service`             | Shipment service option                    | string          | `express`, `economy` | required for "one-step" endpoint |
+| `status`              | Shipment status code                       | integer         | `-1`, `0`, `3`       | response only                    |
+| `carrierName`         | Carrier name                               | string          |                      | response only (⁷)                |
+| `finalCost`           | Final shipment cost                        | `amount` object |                      | response only (⁷)                |
+| `insuranceCost`       | Insurance finalCost                        | `amount` object |                      | response only (⁷)                |
+| `reference`           | Reference number (used in the Client area) | string          |                      | response only (⁷)                |
+| `trackingNumber`      | Tracking number                            | string          |                      | response only (⁷)                |
 
 #### (*) `scheduledProcessing`
 

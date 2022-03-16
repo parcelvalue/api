@@ -82,3 +82,4 @@ For code checking and validation, please see the [Developer installation informa
 #### v3.7.0
 
 * New shipment object meta properties: `finalCost`, `insuranceCost`
+* New endpoint: `/shipments/<apiShipmentId>/tracking`

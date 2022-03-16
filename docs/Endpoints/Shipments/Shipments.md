@@ -47,7 +47,7 @@ The meta property of the `shipment` must contain the chosen `service` option, an
 ---
 
 ## Retrieve information about an existing shipment.
-#### `GET /shipments/<shipmentApiId>`
+#### `GET /shipments/<apiShipmentId>`
 
 The request should contain no content body.
 
@@ -56,12 +56,20 @@ The request should contain no content body.
 ---
 
 ## Retrieve shipment documents
-#### `GET /shipments/<shipmentApiId>/documents`
+#### `GET /shipments/<apiShipmentId>/documents`
 
 The request should contain no content body.
 
 [Examples](ExamplesRetrieveDocuments.md)
 
+---
+
+## Retrieve shipment tracking information
+#### `GET /shipments/<apiShipmentId>/tracking`
+
+The request should contain no content body.
+
+[Examples](ExamplesRetrieveTracking.md)
 ---
 
 ## Resources

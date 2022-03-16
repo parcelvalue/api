@@ -1,5 +1,37 @@
 # Document structure
 
+## `address` object attributes
+
+| Name         | Description          | Type   | Format                                            | Restrictions | Maximum length |
+|--------------|----------------------|--------|---------------------------------------------------|--------------|----------------|
+| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 35             |
+| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     | 30             |
+| `address2`   | Address              | string | Basic Latin string with no special characters (¹) | optional     | 30             |
+| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     | 30             |
+| `postalCode` | Postal code          | string |                                                   | required     | 30             |
+| `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) | 20             |
+| `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     | 2              |
+| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 35             |
+| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 25             |
+| `email`      | Contact email        | string |                                                   | required (⁵) | 50             |
+
+
+## `amount` object attributes
+
+| Name       | Description     | Type   | Format                                           | Restrictions |
+|------------|-----------------|--------|--------------------------------------------------|--------------|
+| `amount`   | Amount value    | number | (³)(⁶)                                           | required     |
+| `currency` | Amount currency | string | Currently the only accepted value is "EUR"       | required     |
+
+## `dimensions` object attributes
+
+| Name     | Description      | Type   | Format                                           | Restrictions |
+|----------|------------------|--------|--------------------------------------------------|--------------|
+| `length` | Package length   | number | (³)(⁶)                                           | required     |
+| `width`  | Package width    | number | (³)(⁶)                                           | required     |
+| `height` | Package height   | number | (³)(⁶)                                           | required     |
+| `units`  | Dimensions units | number | Currently the only accepted value is 1, for "KG" | required     |
+
 ## `documents` object attributes
 
 | Name          | Description                                       | Type             | Format          |
@@ -7,6 +39,14 @@
 | `contentType` | Content-Type MIME Header                          | string           | type/subtype    |
 | `fileName`    | Name of the file                                  | string           |                 |
 | `fileData`    | Body of the file, encoded using the Base64 scheme | string           |                 |
+
+## `package` object attributes
+
+| Name          | Description        | Type                | Format                              | Restrictions |
+|---------------|--------------------|---------------------|-------------------------------------|--------------|
+| `weight`      | Package weight     | `weight` object     |                                     | required     |
+| `dimensions`  | Package dimensions | `dimensions` object |                                     | required     |
+| `type`        | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
 
 ## `rate` object attributes
 
@@ -91,52 +131,33 @@ Used only in the "one-step" endpoint;
 | `self`     | Shipment resource URL   | string | `<apiURL>/shipments<id>` | response only     |
 | `tracking` | External tracking URL   | string |                          | response only (⁸) |
 
+## `tracking` object attributes
 
-## `address` object structure
+| Name                | Description                                | Type               |
+|---------------------|--------------------------------------------|--------------------|
+| `carrierShipmentId` | Tracking number                            | string             |
+| `trackingHash`      | Tracking hash code (*)                     | string             |
+| `trackingStatus`    | Status of latest tracking event (*)        | integer (nullable) |
+| `trackingDate`      | Date and time of latest tracking event     | string (nullable)  |
 
-| Name         | Description          | Type   | Format                                            | Restrictions | Maximum length |
-|--------------|----------------------|--------|---------------------------------------------------|--------------|----------------|
-| `name`       | Name                 | string | Basic Latin string with no special characters (¹) | required     | 35             |
-| `address1`   | Address              | string | Basic Latin string with no special characters (¹) | required     | 30             |
-| `address2`   | Address              | string | Basic Latin string with no special characters (¹) | optional     | 30             |
-| `city`       | City                 | string | Basic Latin string with no special characters (¹) | required     | 30             |
-| `postalCode` | Postal code          | string |                                                   | required     | 30             |
-| `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) | 20             |
-| `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     | 2              |
-| `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 35             |
-| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 25             |
-| `email`      | Contact email        | string |                                                   | required (⁵) | 50             |
+### (*) `trackingHash`
 
-## `package` object structure
+The hash code can be used to generate the tracking link. The format is: `https://tracking.qapla.it/<trackingHash>`.
 
-| Name          | Description        | Type                | Format                              | Restrictions |
-|---------------|--------------------|---------------------|-------------------------------------|--------------|
-| `weight`      | Package weight     | `weight` object     |                                     | required     |
-| `dimensions`  | Package dimensions | `dimensions` object |                                     | required     |
-| `type`        | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
+### (*) `trackingStatus`
 
-## `weight` object structure
+For complete information about the tracking status code please see [Qapla' documentation](https://webhook.qapla.dev/en/#qaplaStatus).
+
+## `weight` object attributes
 
 | Name    | Description  | Type   | Format                                           | Restrictions |
 |---------|--------------|--------|--------------------------------------------------|--------------|
 | `value` | Weight value | number | (³)(⁶)                                           | required     |
 | `units` | Weight units | number | Currently the only accepted value is 1, for "KG" | required     |
 
-## `dimensions` object structure
+---
 
-| Name     | Description      | Type   | Format                                           | Restrictions |
-|----------|------------------|--------|--------------------------------------------------|--------------|
-| `length` | Package length   | number | (³)(⁶)                                           | required     |
-| `width`  | Package width    | number | (³)(⁶)                                           | required     |
-| `height` | Package height   | number | (³)(⁶)                                           | required     |
-| `units`  | Dimensions units | number | Currently the only accepted value is 1, for "KG" | required     |
-
-## `amount` object structure
-
-| Name       | Description     | Type   | Format                                           | Restrictions |
-|------------|-----------------|--------|--------------------------------------------------|--------------|
-| `amount`   | Amount value    | number | (³)(⁶)                                           | required     |
-| `currency` | Amount currency | string | Currently the only accepted value is "EUR"       | required     |
+### Notes
 
 (¹) Data containing special characters will be rejected;
 

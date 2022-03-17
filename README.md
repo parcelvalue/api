@@ -59,27 +59,39 @@ For code checking and validation, please see the [Developer installation informa
 
 #### v3
 
+July 2021
+
 * Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`;
 * Removed unused shipment object attribute `useCod`;
 
 #### v3.3.0
+
+18 February 2022
 
 * Removed unused shipment object attribute `saturdayDelivery`;
 * New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`;
 
 #### v3.4.0
 
+22 February 2022
+
 * Add insurance support; new fields: `insuranceDescription`, `insuranceValue`;
 
 #### v3.5.0
+
+24 February 2022
 
 * New meta option for one-step endpoint: `scheduledProcessing`;
 
 #### v3.6.0
 
+14 March 2022
+
 * New shipment object meta property: `carrierName`
 
 #### v3.7.0
+
+17 March 2022
 
 * New shipment object meta properties: `finalCost`, `insuranceCost`
 * New endpoint: `/shipments/<apiShipmentId>/tracking`

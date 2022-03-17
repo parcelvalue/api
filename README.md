@@ -64,6 +64,10 @@ July 2021
 * Shipment object meta properties `reference` and `trackingNumber` are now always returned, with default value `null`;
 * Removed unused shipment object attribute `useCod`;
 
+October 2021
+
+* New shipment endpoints: Save, Rate, Confirm
+
 #### v3.3.0
 
 18 February 2022

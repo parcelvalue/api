@@ -31,6 +31,9 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 * Test
     * [`/test`](/docs/Endpoints/Test.md)
 
+* Addresses
+    * [`/addresses`](/docs/Endpoints/Addresses/Addresses.md)
+
 * Clients
     * [`/clients`](/docs/Endpoints/Clients/Clients.md)
 
@@ -105,3 +108,9 @@ October 2021
 25 March 2022
 
 * New endpoint: `/clients/authentication`
+
+#### v3.9.0
+
+25 March 2022
+
+* New endpoint: `/addresses`

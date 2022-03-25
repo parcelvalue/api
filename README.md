@@ -32,7 +32,7 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
     * [`/test`](/docs/Endpoints/Test.md)
 
 * Clients
-    * [`/clients/current`](/docs/Endpoints/Clients/Current.md)
+    * [`/clients`](/docs/Endpoints/Clients/Clients.md)
 
 * Shipments
     * [`/shipments`](/docs/Endpoints/Shipments/Shipments.md)
@@ -99,3 +99,9 @@ October 2021
 
 * New shipment object meta properties: `finalCost`, `insuranceCost`
 * New endpoint: `/shipments/<apiShipmentId>/tracking`
+
+#### v3.8.0
+
+25 March 2022
+
+* New endpoint: `/clients/authentication`

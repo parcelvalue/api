@@ -137,14 +137,14 @@ Used only in the "one-step" endpoint;
 |---------------------|--------------------------------------------|--------------------|
 | `carrierShipmentId` | Tracking number                            | string             |
 | `trackingHash`      | Tracking hash code (*)                     | string             |
-| `trackingStatus`    | Status of latest tracking event (*)        | integer (nullable) |
+| `trackingStatus`    | Status of latest tracking event (**)        | integer (nullable) |
 | `trackingDate`      | Date and time of latest tracking event     | string (nullable)  |
 
 ### (*) `trackingHash`
 
 The hash code can be used to generate the tracking link. The format is: `https://tracking.qapla.it/<trackingHash>`.
 
-### (*) `trackingStatus`
+### (**) `trackingStatus`
 
 For complete information about the tracking status code please see [Qapla' documentation](https://webhook.qapla.dev/en/#qaplaStatus).
 

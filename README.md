@@ -39,6 +39,7 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 * Shipments
     * [`/shipments`](/docs/Endpoints/Shipments/Shipments.md)
+    * [`/shipment-summaries`](/docs/Endpoints/ShipmentSummaries/ShipmentSummaries.md)
 
 ---
 
@@ -114,3 +115,9 @@ October 2021
 25 March 2022
 
 * New endpoint: `/addresses`
+
+#### v3.10.0
+
+28 March 2022
+
+* New endpoint: `/shipment-summaries`

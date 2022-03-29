@@ -40,7 +40,7 @@
         }
     },
     "scripts" : {
-        "all": "clear && composer lint && composer check && composer s:8 && composer test",
+        "all": "composer lint && composer check && composer s:8 && composer test",
         "doc" : [
             "Composer\\Config::disableProcessTimeout",
             "clear && phpDocumentor.phar -d . --ignore vendor/ -t var/tmp/phpdoc --cache-folder var/tmp/phpdoc/.cache && browser-sync start --server 'var/tmp/phpdoc'"

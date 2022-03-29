@@ -121,3 +121,9 @@ October 2021
 28 March 2022
 
 * New endpoint: `/shipment-summaries`
+
+#### v3.10.1
+
+29 March 2022
+
+* Data containing special characters will be converted (until now it was rejected)

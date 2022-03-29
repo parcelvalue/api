@@ -159,7 +159,7 @@ For complete information about the tracking status code please see [Qapla' docum
 
 ### Notes
 
-(¹) Data containing special characters will be rejected;
+(¹) Data containing special characters will be converted;
 
 (²) For `US`, `phone` should start with 1 and contain 11 digits;
 

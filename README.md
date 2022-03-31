@@ -127,3 +127,9 @@ October 2021
 29 March 2022
 
 * Data containing special characters will be converted (until now it was rejected)
+
+#### V3.10.2
+
+31 March 2022
+
+* `client` object now contains the complete client address

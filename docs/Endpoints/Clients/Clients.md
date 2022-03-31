@@ -40,10 +40,19 @@ Please see the [Authentication documentation](../../Authentication.md) for furth
 
 ###### `client` object attributes
 
-| Name        | Description     | Type   |
-|-------------|-----------------|--------|
-| `name`      | Client name     | string |
-| `clientKey` | Client API key  | string |
+| Name         | Description          | Type   |
+|--------------|----------------------|--------|
+| `name`       | Client name          | string |
+| `address1`   | Address              | string |
+| `address2`   | Address              | string |
+| `city`       | City                 | string |
+| `postalCode` | Postal code          | string |
+| `state`      | State / province     | string |
+| `country`    | Country              | string |
+| `contact`    | Contact name         | string |
+| `phone`      | Contact phone number | number |
+| `email`      | Contact email        | string |
+| `clientKey`  | Client API key       | string |
 
 #### `Authorization` header example
 
@@ -82,9 +91,25 @@ The request should contain no content body.
 On success, the API will return a `JSON API` document with a `client` object as the `data` member.  
 The `id` member of the `client` object will contain the ParcelValue client id.
 
-Tip: in order to simply verify the authentication status, one could issue a `HEAD` request instead of `GET`.
+##### Response document structure
 
-The response object will only contain the client name.
+###### `client` object attributes
+
+| Name         | Description          | Type   |
+|--------------|----------------------|--------|
+| `name`       | Client name          | string |
+| `address1`   | Address              | string |
+| `address2`   | Address              | string |
+| `city`       | City                 | string |
+| `postalCode` | Postal code          | string |
+| `state`      | State / province     | string |
+| `country`    | Country              | string |
+| `contact`    | Contact name         | string |
+| `phone`      | Contact phone number | number |
+| `email`      | Contact email        | string |
+| `clientKey`  | Client API key       | string |
+
+Tip: in order to simply verify the authentication status, one could issue a `HEAD` request instead of `GET`.
 
 [Examples](ExamplesCurrent.md)
 

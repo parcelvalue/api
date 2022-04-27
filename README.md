@@ -74,62 +74,68 @@ October 2021
 
 #### v3.3.0
 
-18 February 2022
+February 2022
 
 * Removed unused shipment object attribute `saturdayDelivery`;
 * New optional fields: `customerReference`, `specialInstructions`, `confirmationEmail`, `booking`;
 
 #### v3.4.0
 
-22 February 2022
+February 2022
 
 * Add insurance support; new fields: `insuranceDescription`, `insuranceValue`;
 
 #### v3.5.0
 
-24 February 2022
+February 2022
 
 * New meta option for one-step endpoint: `scheduledProcessing`;
 
 #### v3.6.0
 
-14 March 2022
+March 2022
 
-* New shipment object meta property: `carrierName`
+* New shipment object meta property: `carrierName`;
 
 #### v3.7.0
 
-17 March 2022
+March 2022
 
-* New shipment object meta properties: `finalCost`, `insuranceCost`
-* New endpoint: `/shipments/<apiShipmentId>/tracking`
+* New shipment object meta properties: `finalCost`, `insuranceCost`;
+* New endpoint: `/shipments/<apiShipmentId>/tracking`;
 
 #### v3.8.0
 
-25 March 2022
+March 2022
 
-* New endpoint: `/clients/authentication`
+* New endpoint: `/clients/authentication`;
 
 #### v3.9.0
 
-25 March 2022
+March 2022
 
-* New endpoint: `/addresses`
+* New endpoint: `/addresses`;
 
 #### v3.10.0
 
-28 March 2022
+March 2022
 
-* New endpoint: `/shipment-summaries`
+* New endpoint: `/shipment-summaries`;
 
 #### v3.10.1
 
-29 March 2022
+March 2022
 
-* Data containing special characters will be converted (until now it was rejected)
+* Data containing special characters will be converted (until now it was rejected);
 
 #### V3.10.2
 
-31 March 2022
+March 2022
 
-* `client` object now contains the complete client address
+* `client` object now contains the complete client address;
+
+#### V3.11
+
+April 2022
+
+* `shipDate` is now optional; if not set, it wil be managed by the system;

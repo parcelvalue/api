@@ -68,7 +68,7 @@
 
 | Name                   | Description                                   | Type             | Format          | Restrictions  | Default |
 |------------------------|-----------------------------------------------|------------------|-----------------|---------------|---------|
-| `shipDate`             | Departure date                                | string           | ISO 8601 Date   | required      |         |
+| `shipDate`             | Departure date                                | string           | ISO 8601 Date   | optional (****) |         |
 | `shipFrom`             | Sender address                                | `address` object |                 | required      |         |
 | `shipTo`               | Receiver address                              | `address` object |                 | required      |         |
 | `packages`             | One or more `package` objects                 | `package` object |                 | required (*)  |         |
@@ -84,6 +84,8 @@
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
 (**) insurance is optional, however if one field is filled then the other must also be filled;
+
+(****) if `shipDate` is omitted, it will be managed by the system;
 
 ## `shipment` object meta
 

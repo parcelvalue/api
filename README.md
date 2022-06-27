@@ -138,4 +138,4 @@ March 2022
 
 April 2022
 
-* `shipDate` is now optional; if not set, it wil be managed by the system;
+* `shipDate` is now optional; if not set, it will be managed by the system;

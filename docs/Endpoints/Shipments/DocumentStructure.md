@@ -91,7 +91,7 @@
 
 | Name                  | Description                                | Type            | Format               | Restrictions                     |
 |-----------------------|--------------------------------------------|-----------------|----------------------|----------------------------------|
-| `carrierChoice`       | Carrier Choice (request)                   | string          | `DHL`, POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint |
+| `carrierChoice`       | Carrier Choice (request)                   | string          | `DHL`, `POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint |
 | `carrierName`         | Carrier name                               | string          |                      | response only (⁷)                |
 | `finalCost`           | Final shipment cost                        | `amount` object |                      | response only (⁷)                |
 | `insuranceCost`       | Insurance finalCost                        | `amount` object |                      | response only (⁷)                |

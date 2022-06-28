@@ -43,7 +43,9 @@ The request `JSON API` document should contain a `shipment` object as the docume
 The meta property of the `shipment` must contain the chosen `service` option, and can optionally contain the `carrierChoice` and `scheduledProcessing` options.
 
 [Examples - `scheduledProcessing` "true"](ExamplesOneStepScheduledTrue.md)
+
 [Examples - `scheduledProcessing` "false"](ExamplesOneStepScheduledFalse.md)
+
 [Examples - `scheduledProcessing` "false" - with carrier choice](ExamplesOneStepScheduledFalseCarrierChoice.md)
 
 ---

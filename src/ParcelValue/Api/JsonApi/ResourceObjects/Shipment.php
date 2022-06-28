@@ -23,9 +23,9 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         $this->setId($id);
     }
 
-    public function getCarrier(): ?string
+    public function getCarrierChoice(): ?string
     {
-        return (string) $this->getMeta('carrier');
+        return (string) $this->getMeta('carrierChoice');
     }
 
     public function getReference(): string
@@ -48,9 +48,9 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         return (int) $this->getMeta('status');
     }
 
-    public function setCarrier(string $carrier): bool
+    public function setCarrierChoice(string $carrierChoice): bool
     {
-        $this->setMeta('carrier', $carrier);
+        $this->setMeta('carrierChoice', $carrierChoice);
         return true;
     }
 

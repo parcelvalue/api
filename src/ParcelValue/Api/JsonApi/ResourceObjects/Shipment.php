@@ -23,6 +23,11 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
         $this->setId($id);
     }
 
+    public function getCarrier(): ?string
+    {
+        return (string) $this->getMeta('carrier');
+    }
+
     public function getReference(): string
     {
         return (string) $this->getMeta('reference');
@@ -41,6 +46,12 @@ class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
     public function getStatus(): int
     {
         return (int) $this->getMeta('status');
+    }
+
+    public function setCarrier(string $carrier): bool
+    {
+        $this->setMeta('carrier', $carrier);
+        return true;
     }
 
     public function setScheduledProcessing(bool $scheduledProcessing): bool

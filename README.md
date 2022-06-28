@@ -128,14 +128,20 @@ March 2022
 
 * Data containing special characters will be converted (until now it was rejected);
 
-#### V3.10.2
+#### v3.10.2
 
 March 2022
 
 * `client` object now contains the complete client address;
 
-#### V3.11
+#### v3.11
 
 April 2022
 
 * `shipDate` is now optional; if not set, it will be managed by the system;
+
+#### v3.12
+
+June 2022
+
+* New shipment meta data field: `carrierChoice`;

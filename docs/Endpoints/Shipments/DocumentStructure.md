@@ -91,14 +91,15 @@
 
 | Name                  | Description                                | Type            | Format               | Restrictions                     |
 |-----------------------|--------------------------------------------|-----------------|----------------------|----------------------------------|
-| `rate`                | Shipment rate to use when confirming       | `rate` object   |                      | required for confirm endpoint    |
-| `scheduledProcessing` | Scheduled processing option                | boolean         | `true`, `false`      | (*)
-| `service`             | Shipment service option                    | string          | `express`, `economy` | required for "one-step" endpoint |
-| `status`              | Shipment status code                       | integer         | `-1`, `0`, `3`       | response only                    |
+| `carrierChoice`       | Carrier Choice (request)                   | string          | `DHL`, POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint |
 | `carrierName`         | Carrier name                               | string          |                      | response only (⁷)                |
 | `finalCost`           | Final shipment cost                        | `amount` object |                      | response only (⁷)                |
 | `insuranceCost`       | Insurance finalCost                        | `amount` object |                      | response only (⁷)                |
+| `rate`                | Shipment rate to use when confirming       | `rate` object   |                      | required for confirm endpoint    |
 | `reference`           | Reference number (used in the Client area) | string          |                      | response only (⁷)                |
+| `scheduledProcessing` | Scheduled processing option                | boolean         | `true`, `false`      | (*)
+| `service`             | Shipment service choice (request)          | string          | `express`, `economy` | required for "one-step" endpoint |
+| `status`              | Shipment status code                       | integer         | `-1`, `0`, `3`       | response only                    |
 | `trackingNumber`      | Tracking number                            | string          |                      | response only (⁷)                |
 
 #### (*) `scheduledProcessing`

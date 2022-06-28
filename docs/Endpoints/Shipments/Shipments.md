@@ -40,9 +40,11 @@ If the `attributes.finalCost` property is omitted, the shipment will be confirme
 
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 
-The meta property of the `shipment` must contain the chosen `service` option, and can optionally contian the `scheduledProcessing` option.
+The meta property of the `shipment` must contain the chosen `service` option, and can optionally contain the `carrierChoice` and `scheduledProcessing` options.
 
-[Example](ExamplesSimple.md)
+[Examples - `scheduledProcessing` "true"](ExamplesOneStepScheduledTrue.md)
+[Examples - `scheduledProcessing` "false"](ExamplesOneStepScheduledFalse.md)
+[Examples - `scheduledProcessing` "false" - with carrier choice](ExamplesOneStepScheduledFalseCarrierChoice.md)
 
 ---
 

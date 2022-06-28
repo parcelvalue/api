@@ -92,6 +92,7 @@ An example of the structure of a request data for the `/shipments` endpoint woul
             "booking": true
         },
         "meta": {
+            "carrierChoice": "DHL",
             "scheduledProcessing": true,
             "service": "express"
         }

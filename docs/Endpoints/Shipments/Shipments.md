@@ -27,7 +27,7 @@ The request `JSON API` document should contain a `shipment` object as the docume
 
 The meta property of the `shipment` should contain a `rate` object (retrieved using the "Rate shipment" endpoint).
 
-The `attributes.finalCost` property of the rate is optional. If present, the API will attempt to math the rate price when confirming the shipment.
+The `attributes.finalCost` property of the rate is optional. If present, the API will attempt to match the rate price when confirming the shipment.
 If the new price is different, the shipment will not be confirmed and an error will be returned.
 If the `attributes.finalCost` property is omitted, the shipment will be confirmed without checking the price.
 

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ParcelValue\Api\JWT;
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use ParcelValue\Api\Exceptions\JwtException;
 
 final class Helper
@@ -28,8 +29,10 @@ final class Helper
         try {
             $payload = JWT::decode(
                 $jwt, // jwt The JWT
-                $serverKey, // key The key, or map of keys.
-                [self::ALGORITHM_HS256], // allowed_algs List of supported verification algorithms
+                new Key(
+                    $serverKey,
+                    self::ALGORITHM_HS256,
+                ),
             );
         } catch (\Throwable $e) {
             throw new JwtException($e->getMessage(), $e->getCode(), $e);

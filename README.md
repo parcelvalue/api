@@ -12,8 +12,22 @@ For the latest version of this documentation please visit [https://parcelvalue.g
 
 ---
 
-Before using the API please make sure you have a ParcelValue client account set up.  
-Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parcelvalue.eu) and visit the section [`API`](https://my.parcelvalue.eu/Clients/api) where you will find the API keys and any related information.
+Before using the API please make sure you have a ParcelValue client account set up.
+
+It is recommended to start by using the testing environment while developing your integration, then move to using a real account in the production environment.
+
+Please ask ParcelValue to create a test client which you can use in the testing environment.
+
+Once you have obtained the user and password, please log in the ParcelValue client area and visit the `API` section where you will find all the information specific to the current environment:
+
+- API URL and version;
+- Server key;
+- Your Client key(s);
+
+Current client area URL's for the API section are:
+
+- Testing: [test.v3.my.parcelvalue.eu/api](https://test.v3.my.parcelvalue.eu/api)
+- Production: [v3.my.parcelvalue.eu/api](https://v3.my.parcelvalue.eu/api)
 
 ---
 
@@ -45,8 +59,8 @@ Please log in the [ParcelValue client area (my.parcelvalue.eu)](https://my.parce
 
 ### Project documentation
 
-This project contains the API documentation.  
-The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is usually not needed.  
+This project contains the API documentation.
+The project code is only required by the [ParcelValue API Client](https://github.com/parcelvalue/api-client), so a standalone installation is usually not needed.
 For code checking and validation, please see the [Developer installation information](/docs/DeveloperInstallation.md)
 
 

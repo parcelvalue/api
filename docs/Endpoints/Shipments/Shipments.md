@@ -50,6 +50,18 @@ The meta property of the `shipment` must contain the chosen `service` option, an
 
 ---
 
+## Delete an existing shipment.
+
+#### `DELETE /shipments/<apiShipmentId>`
+
+The request should contain no content body.
+
+On success the API returns the HTTP code 204 No Content.
+
+[Examples](ExamplesDeleteShipment.md)
+
+---
+
 ## Retrieve information about an existing shipment.
 #### `GET /shipments/<apiShipmentId>`
 

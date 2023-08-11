@@ -2,7 +2,22 @@
 
 Create a new shipment, rate and confirm, retrieve shipment information, retrieve shipment documents.
 
+There are two options for creating shipments:
+
+1) Multiple API calls (similar workflow to client area):
+
+- call [Rate](#rate-shipment) endpoint;
+- select one of the rates returned;
+- call [Confirm](#confirm-shipment) endpoint specifying the chosen rate;
+
+2) Simplified "one step" procedure:
+
+- call only one endpoint: [Create and confirm a new shipment](#Create-and-confirm-a-new-shipment)
+- specify a general service to use (economy or express) and the system will select the best rate automatically;
+
 Methods : `GET`, `POST`
+
+---
 
 ## Save shipment
 ### `POST /shipments/save`
@@ -35,8 +50,10 @@ If the `attributes.finalCost` property is omitted, the shipment will be confirme
 
 ---
 
-## Create and confirm a new shipment - simplified "one step" endpoint.
+## Create and confirm a new shipment
 ### `POST /shipments`
+
+Simplified "one step" endpoint.
 
 The request `JSON API` document should contain a `shipment` object as the document's `data` member.
 

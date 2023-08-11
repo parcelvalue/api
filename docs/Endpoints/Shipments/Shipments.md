@@ -12,7 +12,7 @@ There are two options for creating shipments:
 
 2) Simplified "one step" procedure:
 
-- call only one endpoint: [Create and confirm a new shipment](#Create-and-confirm-a-new-shipment)
+- call only one endpoint: [Create and confirm a new shipment](#create-and-confirm-a-new-shipment)
 - specify a general service to use (economy or express) and the system will select the best rate automatically;
 
 Methods : `GET`, `POST`

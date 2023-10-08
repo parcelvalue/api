@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+#### v3.16
+
+October 2023
+
+* Add `exportDeclaration`;
+
 #### v3.15
 
 July 2023

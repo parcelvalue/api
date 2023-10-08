@@ -40,6 +40,50 @@
 | `fileName`    | Name of the file                                  | string           |                 |
 | `fileData`    | Body of the file, encoded using the Base64 scheme | string           |                 |
 
+## `exportDeclaration` object attributes
+
+| Name                 | Description                     | Type              | Format        | Restrictions |
+|----------------------|---------------------------------|-------------------|---------------|--------------|
+| `exportReasonType`   | Reason for export.              | string            | (*)           | required     |
+| `invoiceDate`        | Date of invoice.                | string            | ISO 8601 Date | required     |
+| `invoiceReference`   | Invoice reference.              | string            |               | required     |
+| `shipmentPurpose`    | Shipment purpose.               | string            | (**)          | required     |
+| `lineItems`          | One or more `lineItem` objects. | `lineItem` object |               | required     |
+
+(*) possible values: 
+- 'COMMERCIAL_PURPOSE_OR_SALE'
+- 'DEFENCE_MATERIAL'
+- 'DIPLOMATIC_GOODS'
+- 'GIFT'
+- 'INTERCOMPANY_USE'
+- 'PERMANENT'
+- 'PERSONAL_BELONGINGS_OR_PERSONAL_USE'
+- 'RETURN'
+- 'RETURN_TO_ORIGIN'
+- 'SAMPLE'
+- 'TEMPORARY'
+- 'USED_EXHIBITION_GOODS_TO_ORIGIN'
+- 'WARRANTY_REPLACEMENT'
+
+(*) possible values:
+- 'COMMERCIAL'
+- 'PERSONAL'
+
+
+## `lineItem` object attributes
+
+| Name            | Description     | Type   | Format | Restrictions |
+|-----------------|-----------------|--------|--------|--------------|
+| `reference`     | Item reference. | string |        | required     |
+| `productId`     | Product Id      | string |        | required     |
+| `description`   | Description     | string |        | required     |
+| `quantity`      | Quantity        | number | (³)(⁶) | required     |
+| `unitPrice`     | Unit price      | number | (³)(⁶) | required     |
+| `originCountry` | Origin country. | string |        | required     |
+| `commodityCode` | HS Code         | string |        | required     |
+| `unitWeight`    | Unit weight     | number | (³)(⁶) | required     |
+
+
 ## `package` object attributes
 
 | Name          | Description        | Type                | Format                              | Restrictions |

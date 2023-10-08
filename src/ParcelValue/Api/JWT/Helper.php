@@ -15,6 +15,8 @@ final class Helper
     public static function generate(string $clientId, string $clientKey, string $serverKey): string
     {
         return JWT::encode(
+            // Do not change array key order here, it is important (unit test fails).
+            // phpcs:ignore SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder
             [
                 'sub' => $clientId,
                 'clientKey' => $clientKey,

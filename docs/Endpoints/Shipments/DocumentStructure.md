@@ -110,26 +110,34 @@
 
 ## `shipment` object attributes
 
-| Name                   | Description                                   | Type             | Format          | Restrictions  | Default |
-|------------------------|-----------------------------------------------|------------------|-----------------|---------------|---------|
+| Name                   | Description                                   | Type             | Format          | Restrictions    | Default |
+|------------------------|-----------------------------------------------|------------------|-----------------|-----------------|---------|
 | `shipDate`             | Departure date                                | string           | ISO 8601 Date   | optional (****) |         |
-| `shipFrom`             | Sender address                                | `address` object |                 | required      |         |
-| `shipTo`               | Receiver address                              | `address` object |                 | required      |         |
-| `packages`             | One or more `package` objects                 | `package` object |                 | required (*)  |         |
-| `goodsDescription`     | Description of items being shipped            | string           |                 | required      |         |
-| `insuranceDescription` | Detailed description of insured items         | string           |                 | optional (**) |         |
-| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)          | optional (**) |         |
-| `invoiceSubtotal`      | Value of items being shipped                  | `amount` object  |                 | required      |         |
-| `customerReference`    | Customer reference (free text)                | string           |                 | optional      |         |
-| `specialInstructions`  | Special instructions for carrier              | string           |                 | optional      |         |
-| `confirmationEmail`    | Send confirmation with labels to this address | string           |                 | optional      |         |
-| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional      | `true`  |
+| `shipFrom`             | Sender address                                | `address` object |                 | required        |         |
+| `shipTo`               | Receiver address                              | `address` object |                 | required        |         |
+| `packages`             | One or more `package` objects                 | `package` object |                 | required (*)    |         |
+| `goodsDescription`     | Description of items being shipped            | string           |                 | required        |         |
+| `insuranceDescription` | Detailed description of insured items         | string           |                 | optional (**)   |         |
+| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)          | optional (**)   |         |
+| `invoiceSubtotal`      | Value of items being shipped                  | `amount` object  |                 | required        |         |
+| `customerReference`    | Customer reference (free text)                | string           |                 | optional        |         |
+| `specialInstructions`  | Special instructions for carrier              | string           |                 | optional        |         |
+| `confirmationEmail`    | Send confirmation with labels to this address | string           |                 | optional        |         |
+| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional        | `true`  |
+| `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)    | `false` |
 
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
 (**) insurance is optional, however if one field is filled then the other must also be filled;
 
 (****) if `shipDate` is omitted, it will be managed by the system;
+
+(^) `documentsOnly` restrictions:
+- available only for international shipments;
+- maximum package dimensions: 30 cm x 21 cm x 15 cm;
+- maximum package dimensions: 30 cm x 21 cm x 15 cm;
+- maximum package weight: 2.5 kg;
+- unavailable fields (will be ignored): `goodsDescription`, `invoiceSubtotal`, `insuranceDescription`, `insuranceValue`;
 
 ## `shipment` object meta
 

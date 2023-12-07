@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+#### v3.17
+
+December 2023
+
+* New shipment field: `documentsOnly`;
+
 #### v3.16
 
 October 2023

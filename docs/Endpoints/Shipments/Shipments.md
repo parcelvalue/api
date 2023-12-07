@@ -67,6 +67,8 @@ The meta property of the `shipment` must contain the chosen `service` option, an
 
 [Examples - `scheduledProcessing` "false" - with carrier choice](ExamplesOneStepScheduledFalseCarrierChoice.md)
 
+[Examples - "one step" - `scheduledProcessing` "true" - `documentsOnly`](ExamplesOneStepScheduledTrueDocumentsOnly.md)
+
 ---
 
 ## Delete an existing shipment.

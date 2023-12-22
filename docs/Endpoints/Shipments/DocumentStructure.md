@@ -135,7 +135,6 @@
 (^) `documentsOnly` restrictions:
 - available only for international shipments;
 - maximum package dimensions: 30 cm x 21 cm x 15 cm;
-- maximum package dimensions: 30 cm x 21 cm x 15 cm;
 - maximum package weight: 2.5 kg;
 - unavailable fields (will be ignored): `goodsDescription`, `invoiceSubtotal`, `insuranceDescription`, `insuranceValue`;
 

@@ -133,7 +133,7 @@
 (****) if `shipDate` is omitted, it will be managed by the system;
 
 (^) `documentsOnly` restrictions:
-- available only for international shipments;
+- available only for shipments that are subject to customs;
 - maximum package dimensions: 30 cm x 21 cm x 15 cm;
 - maximum package weight: 2.5 kg;
 - unavailable fields (will be ignored): `goodsDescription`, `invoiceSubtotal`, `insuranceDescription`, `insuranceValue`;

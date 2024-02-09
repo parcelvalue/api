@@ -114,6 +114,7 @@
 |------------------------|-----------------------------------------------|------------------|-----------------|-----------------|---------|
 | `shipDate`             | Departure date                                | string           | ISO 8601 Date   | optional (****) |         |
 | `shipFrom`             | Sender address                                | `address` object |                 | required        |         |
+| `collectionLocation`   | Collection location                           | `address` object |                 | optional        |         |
 | `shipTo`               | Receiver address                              | `address` object |                 | required        |         |
 | `packages`             | One or more `package` objects                 | `package` object |                 | required (*)    |         |
 | `goodsDescription`     | Description of items being shipped            | string           |                 | required        |         |

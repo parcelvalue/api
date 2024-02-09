@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+### v3.18
+
+Feburary 2023
+
+* Add `collectionLocation`;
+
 #### v3.17
 
 December 2023

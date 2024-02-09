@@ -1,6 +1,6 @@
 # Examples - "one step" - `scheduledProcessing` "false" - with collection location
 
-## Creating a new shipment with carrier choice (`scheduledProcessing` "false")
+## Creating a new shipment with collection location (`scheduledProcessing` "false")
 
 ### OK
 

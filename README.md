@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+### v3.19
+
+February 2023
+
+* Add `exportDeclaration.invoiceFreight`;
+
 ### v3.18
 
 Feburary 2023

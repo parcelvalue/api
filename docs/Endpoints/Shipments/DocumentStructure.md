@@ -42,13 +42,14 @@
 
 ## `exportDeclaration` object attributes
 
-| Name                 | Description                     | Type              | Format        | Restrictions |
-|----------------------|---------------------------------|-------------------|---------------|--------------|
-| `exportReasonType`   | Reason for export.              | string            | (*)           | required     |
-| `invoiceDate`        | Date of invoice.                | string            | ISO 8601 Date | required     |
-| `invoiceReference`   | Invoice reference.              | string            |               | required     |
-| `shipmentPurpose`    | Shipment purpose.               | string            | (**)          | required     |
-| `lineItems`          | One or more `lineItem` objects. | `lineItem` object |               | required     |
+| Name                | Description                     | Type              | Format        | Restrictions |
+|---------------------|---------------------------------|-------------------|---------------|--------------|
+| `exportReasonType`  | Reason for export.              | string            | (*)           | required     |
+| `invoiceDate`       | Date of invoice.                | string            | ISO 8601 Date | required     |
+| `invoiceReference`  | Invoice reference.              | string            |               | required     |
+| `invoiceFreight`    | Invoice freight.                | `amount` object   |               | optional     |
+| `shipmentPurpose`   | Shipment purpose.               | string            | (**)          | required     |
+| `lineItems`         | One or more `lineItem` objects. | `lineItem` object |               | required     |
 
 (*) possible values: 
 - 'COMMERCIAL_PURPOSE_OR_SALE'
@@ -110,22 +111,22 @@
 
 ## `shipment` object attributes
 
-| Name                   | Description                                   | Type             | Format          | Restrictions    | Default |
-|------------------------|-----------------------------------------------|------------------|-----------------|-----------------|---------|
-| `shipDate`             | Departure date                                | string           | ISO 8601 Date   | optional (****) |         |
-| `shipFrom`             | Sender address                                | `address` object |                 | required        |         |
-| `collectionLocation`   | Collection location                           | `address` object |                 | optional        |         |
-| `shipTo`               | Receiver address                              | `address` object |                 | required        |         |
-| `packages`             | One or more `package` objects                 | `package` object |                 | required (*)    |         |
-| `goodsDescription`     | Description of items being shipped            | string           |                 | required        |         |
-| `insuranceDescription` | Detailed description of insured items         | string           |                 | optional (**)   |         |
-| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)          | optional (**)   |         |
-| `invoiceSubtotal`      | Value of items being shipped                  | `amount` object  |                 | required        |         |
-| `customerReference`    | Customer reference (free text)                | string           |                 | optional        |         |
-| `specialInstructions`  | Special instructions for carrier              | string           |                 | optional        |         |
-| `confirmationEmail`    | Send confirmation with labels to this address | string           |                 | optional        |         |
-| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional        | `true`  |
-| `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)    | `false` |
+| Name                   | Description                                   | Type             | Format         | Restrictions    | Default |
+|------------------------|-----------------------------------------------|------------------|----------------|-----------------|---------|
+| `shipDate`             | Departure date                                | string           | ISO 8601 Date  | optional (****) |         |
+| `shipFrom`             | Sender address                                | `address` object |                | required        |         |
+| `collectionLocation`   | Collection location                           | `address` object |                | optional        |         |
+| `shipTo`               | Receiver address                              | `address` object |                | required        |         |
+| `packages`             | One or more `package` objects                 | `package` object |                | required (*)    |         |
+| `goodsDescription`     | Description of items being shipped            | string           |                | required        |         |
+| `insuranceDescription` | Detailed description of insured items         | string           |                | optional (**)   |         |
+| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)         | optional (**)   |         |
+| `invoiceSubtotal`      | Value of items being shipped                  | number           | (³)(⁶)         | required        |         |
+| `customerReference`    | Customer reference (free text)                | string           |                | optional        |         |
+| `specialInstructions`  | Special instructions for carrier              | string           |                | optional        |         |
+| `confirmationEmail`    | Send confirmation with labels to this address | string           |                | optional        |         |
+| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional       | `true`  |
+| `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)   | `false` |
 
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 

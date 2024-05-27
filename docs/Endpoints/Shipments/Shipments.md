@@ -71,6 +71,8 @@ The meta property of the `shipment` must contain the chosen `service` option, an
 
 [Examples - `scheduledProcessing` "false" - with collection location](ExamplesOneStepScheduledFalseCollectionLocation.md)
 
+[Examples - `scheduledProcessing` "false" - with export declaration](ExamplesOneStepScheduledFalseExportDeclaration.md)
+
 ---
 
 ## Delete an existing shipment.

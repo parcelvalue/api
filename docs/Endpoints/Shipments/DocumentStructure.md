@@ -66,7 +66,7 @@
 - 'USED_EXHIBITION_GOODS_TO_ORIGIN'
 - 'WARRANTY_REPLACEMENT'
 
-(*) possible values:
+(**) possible values:
 - 'COMMERCIAL'
 - 'PERSONAL'
 

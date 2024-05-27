@@ -12,7 +12,7 @@
 | `state`      | State / province     | string | 2 letter ISO Alpha-2 code                         | required (⁴) | 20             |
 | `country`    | Country              | string | 2 letter ISO Alpha-2 code                         | required     | 2              |
 | `contact`    | Contact name         | string | Basic Latin string with no special characters (¹) | required     | 35             |
-| `phone`      | Contact phone number | number | (²)(³)                                            | optional     | 25             |
+| `phone`      | Contact phone number | number | (⁹)(²)(³)                                         | optional     | 25             |
 | `email`      | Contact email        | string |                                                   | required (⁵) | 50             |
 
 
@@ -51,7 +51,7 @@
 | `shipmentPurpose`   | Shipment purpose.               | string            | (**)          | required     |
 | `lineItems`         | One or more `lineItem` objects. | `lineItem` object |               | required     |
 
-(*) possible values: 
+(*) possible values:
 - 'COMMERCIAL_PURPOSE_OR_SALE'
 - 'DEFENCE_MATERIAL'
 - 'DIPLOMATIC_GOODS'
@@ -230,6 +230,8 @@ For complete information about the tracking status code please see [Qapla' docum
 (⁷) This field is only returned for completed shipments, otherwise the value is `null`;
 
 (⁸) This field is only returned for completed shipments, otherwise the field is not present in the response;
+
+(⁹) Non numeric values will be discarded.
 
 ---
 

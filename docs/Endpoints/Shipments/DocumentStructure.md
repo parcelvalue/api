@@ -16,7 +16,7 @@
 | `email`             | Contact email                | string   |                                                   | required (⁵) | 50             |
 | `taxIdentification` | Tax / VAT number             | string   | Basic Latin string with no special characters (¹) | optional (*) | 45             |
 
-(*) `taxIdentification` is only required for international shipments with starting point "IT" and carrier FEDEX.
+(*) `taxIdentification` is only required for sender address in international shipments with starting point "IT" and carrier FEDEX.
 
 ## `amount` object attributes
 

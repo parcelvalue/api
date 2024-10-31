@@ -41,7 +41,8 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                 "country": "IT",
                 "contact": "Sender Contactname",
                 "phone": "1234567890",
-                "email": "sender@ship.from"
+                "email": "sender@ship.from",
+                "taxIdentification": "154631102024",
             },
             "shipTo": {
                 "name" : "Receiver Name",
@@ -51,7 +52,8 @@ An example of the structure of a request data for the `/shipments` endpoint woul
                 "country": "DE",
                 "contact": "Receiver Contactname",
                 "phone": "987654321",
-                "email": "receiver@ship.to"
+                "email": "receiver@ship.to",
+                "isResidential": true,
             },
             "packages": [{
                 "weight": {

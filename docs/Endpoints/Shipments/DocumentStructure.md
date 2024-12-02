@@ -14,6 +14,7 @@
 | `contact`           | Contact name                 | string   | Basic Latin string with no special characters (¹) | required     | 35             |
 | `phone`             | Contact phone number         | number   | (⁹)(²)(³)                                         | optional     | 25             |
 | `email`             | Contact email                | string   |                                                   | required (⁵) | 50             |
+| `isResidential`     | Address is not for a company | boolean  |                                                   | optional     |                |
 | `taxIdentification` | Tax / VAT number             | string   | Basic Latin string with no special characters (¹) | optional (*) | 45             |
 
 (*) `taxIdentification` is only required for sender address in international shipments with starting point "IT" and carrier FEDEX.

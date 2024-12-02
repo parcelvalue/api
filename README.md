@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+### v3.21
+
+November 2024
+
+* Add support for additional address object fields: `isResidential`, `taxIdentification`;
+
 ### v3.19
 
 February 2023

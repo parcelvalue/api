@@ -134,6 +134,9 @@
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
 (**) insurance is optional, however if one field is filled then the other must also be filled;
+Currently the insurance rate is NOT included in the A.P.I. rating, but if this is requested 
+(by filling in the goods description and value fields) it will be invoiced at the end of the month according to the agreed rates; 
+you can check the costs of the insurance policy with the ParcelValue Customer Service by writing to info@parcelvalue.eu
 
 (****) if `shipDate` is omitted, it will be managed by the system;
 

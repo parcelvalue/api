@@ -92,7 +92,8 @@ An example of the structure of a request data for the `/shipments` endpoint woul
             "specialInstructions": "Second door on the left",
             "confirmationEmail": "documents@ship.from",
             "booking": true,
-            "documentsOnly": false
+            "documentsOnly": false,
+            "incoTerms": 2
         },
         "meta": {
             "carrierChoice": "DHL",

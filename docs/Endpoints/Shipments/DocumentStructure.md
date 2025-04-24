@@ -114,22 +114,24 @@
 
 ## `shipment` object attributes
 
-| Name                   | Description                                   | Type             | Format         | Restrictions    | Default |
-|------------------------|-----------------------------------------------|------------------|----------------|-----------------|---------|
-| `shipDate`             | Departure date                                | string           | ISO 8601 Date  | optional (****) |         |
-| `shipFrom`             | Sender address                                | `address` object |                | required        |         |
-| `collectionLocation`   | Collection location                           | `address` object |                | optional        |         |
-| `shipTo`               | Receiver address                              | `address` object |                | required        |         |
-| `packages`             | One or more `package` objects                 | `package` object |                | required (*)    |         |
-| `goodsDescription`     | Description of items being shipped            | string           |                | required        |         |
-| `insuranceDescription` | Detailed description of insured items         | string           |                | optional (**)   |         |
-| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)         | optional (**)   |         |
-| `invoiceSubtotal`      | Value of items being shipped                  | number           | (³)(⁶)         | required        |         |
-| `customerReference`    | Customer reference (free text)                | string           |                | optional        |         |
-| `specialInstructions`  | Special instructions for carrier              | string           |                | optional        |         |
-| `confirmationEmail`    | Send confirmation with labels to this address | string           |                | optional        |         |
-| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional       | `true`  |
-| `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)   | `false` |
+| Name                   | Description                                   | Type             | Format         | Restrictions     | Default   |
+|------------------------|-----------------------------------------------|------------------|----------------|------------------|-----------|
+| `shipDate`             | Departure date                                | string           | ISO 8601 Date  | optional (****)  |           |
+| `shipFrom`             | Sender address                                | `address` object |                | required         |           |
+| `collectionLocation`   | Collection location                           | `address` object |                | optional         |           |
+| `shipTo`               | Receiver address                              | `address` object |                | required         |           |
+| `packages`             | One or more `package` objects                 | `package` object |                | required (*)     |           |
+| `goodsDescription`     | Description of items being shipped            | string           |                | required         |           |
+| `insuranceDescription` | Detailed description of insured items         | string           |                | optional (**)    |           |
+| `insuranceValue`       | Insured amount.                               | number           | (³)(⁶)         | optional (**)    |           |
+| `invoiceSubtotal`      | Value of items being shipped                  | number           | (³)(⁶)         | required         |           |
+| `customerReference`    | Customer reference (free text)                | string           |                | optional         |           |
+| `specialInstructions`  | Special instructions for carrier              | string           |                | optional         |           |
+| `confirmationEmail`    | Send confirmation with labels to this address | string           |                | optional         |           |
+| `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional        | `true`    |
+| `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)    |   `false` |
+| `incoTerms`            | Incoterms                                     | number           | `1`,`2`,`3` (i) | optional        | `2`       |
+
 
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
 
@@ -145,6 +147,11 @@ you can check the costs of the insurance policy with the ParcelValue Customer Se
 - maximum package dimensions: 30 cm x 21 cm x 15 cm;
 - maximum package weight: 2.5 kg;
 - unavailable fields (will be ignored): `goodsDescription`, `invoiceSubtotal`, `insuranceDescription`, `insuranceValue`;
+
+(i) `incoTerms` possible values:
+- `1`: DDP - Delivered Duty Paid (named place of destination); 
+- `2`: DAP - Delivered At Place (named place of destination);
+- `3`: EXW – Ex Works (named place of delivery);
 
 ## `shipment` object meta
 

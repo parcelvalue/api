@@ -75,6 +75,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+### v3.22
+
+April 2025
+
+* New optional field: `incoTerms`.
+
 ### v3.21
 
 November 2024

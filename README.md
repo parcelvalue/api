@@ -76,6 +76,12 @@ For code checking and validation, please see the [Developer installation informa
 
 ### Change log
 
+### v3.23
+
+September 2025
+
+- New optional field: `package`.`irregular`.
+
 ### v3.22
 
 April 2025

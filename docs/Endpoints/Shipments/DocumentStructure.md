@@ -90,11 +90,12 @@
 
 ## `package` object attributes
 
-| Name          | Description        | Type                | Format                              | Restrictions |
-|---------------|--------------------|---------------------|-------------------------------------|--------------|
-| `weight`      | Package weight     | `weight` object     |                                     | required     |
-| `dimensions`  | Package dimensions | `dimensions` object |                                     | required     |
-| `type`        | Package type       | string              | Accepted values: 'CARTON', 'PALLET' | required     |
+| Name         | Description                                | Type                | Format                              | Restrictions | Default |
+|--------------|--------------------------------------------|---------------------|-------------------------------------|--------------| --------|
+| `weight`     | Package weight                             | `weight` object     |                                     | required     |         |
+| `dimensions` | Package dimensions                         | `dimensions` object |                                     | required     |         |
+| `type`       | Package type                               | string              | Accepted values: 'CARTON', 'PALLET' | required     |         |
+| `irregular`  | Irregular packaging / non stackable pallet | boolean             | `true`, `false`                     | optional     | `false` |
 
 ## `rate` object attributes
 

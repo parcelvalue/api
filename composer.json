@@ -41,12 +41,12 @@
         }
     },
     "scripts" : {
-        "all": "composer lint && composer check && composer s:8 && composer test",
+        "check": "composer lint && composer check:phpc && composer s:8 && composer test",
         "doc" : [
             "Composer\\Config::disableProcessTimeout",
             "clear && phpDocumentor.phar -d . --ignore vendor/ -t var/tmp/phpdoc --cache-folder var/tmp/phpdoc/.cache && browser-sync start --server 'var/tmp/phpdoc'"
         ],
-        "check" : "vendor/bin/phpcs --standard=php-coding-standard.xml --extensions=php -sp src tests",
+        "check:phpc" : "vendor/bin/phpcs --standard=php-coding-standard.xml --extensions=php -sp src tests",
         "check:structure" : "vendor/bin/pds-skeleton validate .",
         "fix" : "vendor/bin/phpcbf --standard=php-coding-standard.xml --extensions=php -sp src tests",
         "lint": "vendor/bin/parallel-lint src tests",

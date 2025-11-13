@@ -6,7 +6,7 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Test extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    public const TYPE = 'test';
+    public const string TYPE = 'test';
 
     public function __construct(?string $id = null)
     {

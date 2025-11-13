@@ -6,7 +6,7 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class ShipmentSummary extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    public const TYPE = 'shipmentSummary';
+    public const string TYPE = 'shipmentSummary';
 
     public function __construct(?string $id = null)
     {

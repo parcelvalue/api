@@ -10,7 +10,7 @@ use ParcelValue\Api\Exceptions\JwtException;
 
 final class Helper
 {
-    protected const ALGORITHM_HS256 = 'HS256';
+    protected const string ALGORITHM_HS256 = 'HS256';
 
     public static function generate(string $clientId, string $clientKey, string $serverKey): string
     {

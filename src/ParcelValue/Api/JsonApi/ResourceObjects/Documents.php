@@ -6,7 +6,7 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Documents extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    public const TYPE = 'documents';
+    public const string TYPE = 'documents';
 
     public function __construct(string $id)
     {

@@ -9,9 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 final class HelperTest extends TestCase
 {
-    private const CLIENT_ID = '1';
-    private const CLIENT_KEY = 'foo';
-    private const SERVER_KEY = 'bar';
+    private const string CLIENT_ID = '1';
+    private const string CLIENT_KEY = 'foo';
+    private const string SERVER_KEY = 'bar';
 
     private static string $jwt;
 

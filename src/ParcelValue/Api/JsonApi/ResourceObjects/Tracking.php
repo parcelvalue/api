@@ -6,7 +6,7 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Tracking extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    public const TYPE = 'tracking';
+    public const string TYPE = 'tracking';
 
     public function __construct(string $id)
     {

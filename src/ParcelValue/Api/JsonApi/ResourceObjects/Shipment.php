@@ -6,11 +6,11 @@ namespace ParcelValue\Api\JsonApi\ResourceObjects;
 
 class Shipment extends \WebServCo\Api\JsonApi\AbstractResourceObject
 {
-    public const DATE_FORMAT = 'Y-m-d';
-    public const SERVICE_ECONOMY = 'economy';
-    public const SERVICE_EXPRESS = 'express';
-    public const CURRENCY_EUR = 'EUR';
-    public const TYPE = 'shipment';
+    public const string DATE_FORMAT = 'Y-m-d';
+    public const string SERVICE_ECONOMY = 'economy';
+    public const string SERVICE_EXPRESS = 'express';
+    public const string CURRENCY_EUR = 'EUR';
+    public const string TYPE = 'shipment';
 
     public function __construct(?string $id = null)
     {

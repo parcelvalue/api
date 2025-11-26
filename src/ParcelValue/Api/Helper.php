@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace ParcelValue\Api;
 
+use Psr\Log\LoggerInterface;
 use WebServCo\Api\JsonApi\Document;
 use WebServCo\Framework\Http\CurlClient;
 use WebServCo\Framework\Http\Method;
-use WebServCo\Framework\Interfaces\LoggerInterface;
 use WebServCo\Framework\Interfaces\ResponseInterface;
 
 class Helper

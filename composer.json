@@ -63,7 +63,7 @@
         },
         "audit": {
             "ignore": {
-                "PKSA-y2cr-5h3j-g3ys": "Not an option to upgrade, would need to re-generate all client and server keys."
+                "firebase/php-jwt": "Not an option to upgrade, would need to re-generate all client and server keys."
             }
         }
     }

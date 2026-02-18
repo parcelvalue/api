@@ -16,9 +16,9 @@
     ],
     "require": {
         "php" : "^8.3",
-        "webservco/framework" : "@dev",
-        "webservco/api" : "@dev",
-        "firebase/php-jwt": "^6"
+        "firebase/php-jwt": "^6",
+        "webservco/api" : "^3",
+        "webservco/framework" : "^13"
     },
     "require-dev" : {
         "pds/skeleton" : "^1",
@@ -60,6 +60,11 @@
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "audit": {
+            "ignore": {
+                "PKSA-y2cr-5h3j-g3ys": "Not an option to upgrade, would need to re-generate all client and server keys."
+            }
         }
     }
 }

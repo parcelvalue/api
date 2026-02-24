@@ -26,9 +26,9 @@ Once you have obtained the user and password, please log in the ParcelValue clie
 
 Current client area URL's for the API section are:
 
-- Testing: [test.v3.my.parcelvalue.eu/api](https://test.v3.my.parcelvalue.eu/api)
-- Staging: [demo.my.parcelvalue.eu/api](https://demo.my.parcelvalue.eu/api)
-- Production: [v3.my.parcelvalue.eu/api](https://v3.my.parcelvalue.eu/api)
+- Testing: [testing.swift.v3.my.parcelvalue.eu/api](https://testing.swift.v3.my.parcelvalue.eu/api)
+- Staging: [staging.swift.v3.my.parcelvalue.eu/api](https://staging.swift.v3.my.parcelvalue.eu/api)
+- Production: [swift.v3.my.parcelvalue.eu/api](https://swift.v3.my.parcelvalue.eu/api)
 
 ---
 

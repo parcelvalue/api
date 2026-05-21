@@ -34,7 +34,7 @@ Please see the [Error Handling documentation](ErrorHandling.md) for further info
 | Message                                   | Explanation                                                                 |
 |-------------------------------------------|-----------------------------------------------------------------------------|
 | "Missing or invalid authorization header" | The `Authorization` header is missing or contains invalid data              |
-| "Invalid token: <further details>"        | The `JSON WEB Token` is not valid. Further details will e provided.         |
+| "Invalid token: {further details}"        | The `JSON WEB Token` is not valid. Further details will be provided.        |
 | "Token is missing required data"          | The `JSON WEB Token` is missing required data.                              |
 | "Authorization failed"                    | The `JSON WEB Token` is valid, however the authentication was unsuccessful. |
 

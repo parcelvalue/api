@@ -215,4 +215,3 @@ October 2021
 
 * New shipment endpoints: Save, Rate, Confirm
 
----

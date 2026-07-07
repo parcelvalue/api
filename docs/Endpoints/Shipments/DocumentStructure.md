@@ -136,6 +136,7 @@ Note: The `exportDeclaration` object is optional in the context of the API, howe
 | `booking`              | Use collection booking                        | boolean          | `true`, `false` | optional        | `true`    |
 | `documentsOnly`        | Ship documents instead of goods.              | boolean          | `true`, `false` | optional (^)    |   `false` |
 | `incoTerms`            | Incoterms                                     | number           | `1`,`2`,`3` (i) | optional        | `2`       |
+| `exportDeclaration`    | Export decalration                            | `exportDeclaration` object |       | only if shipment is subject to customs | |
 
 
 (*) except for the `/shipments/save` endpoint, where `packages` can be omitted;
@@ -164,7 +165,6 @@ you can check the costs of the insurance policy with the ParcelValue Customer Se
 |------------------------|--------------------------------------------|-----------------|---------------------------------------|----------------------------------------|
 | `carrierChoice`        | Carrier Choice (request)                   | string          | `DHL`, `POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint  |
 | `carrierName`          | Carrier name                               | string          |                                       | response only (⁷)                      |
-| `exportDeclaration`    | Export decalration                         | `exportDeclaration` object |                            | only if shipment is subject to customs |
 | `finalCost`            | Final shipment cost                        | `amount` object |                                       | response only (⁷)                      |
 | `insuranceCost`        | Insurance finalCost                        | `amount` object |                                       | response only (⁷)                      |
 | `rate`                 | Shipment rate to use when confirming       | `rate` object   |                                       | required for confirm endpoint          |

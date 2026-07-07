@@ -54,6 +54,10 @@
 | `shipmentPurpose`   | Shipment purpose.               | string            | (**)          | required     |
 | `lineItems`         | One or more `lineItem` objects. | `lineItem` object |               | required     |
 
+- used if the shipment is subject to customs.
+
+Note: The `exportDeclaration` object is optional in the context of the API, however some carriers require it and without it will return errors or no rates.
+
 (*) possible values:
 - 'COMMERCIAL_PURPOSE_OR_SALE'
 - 'DEFENCE_MATERIAL'
@@ -156,18 +160,19 @@ you can check the costs of the insurance policy with the ParcelValue Customer Se
 
 ## `shipment` object meta
 
-| Name                  | Description                                | Type            | Format               | Restrictions                     |
-|-----------------------|--------------------------------------------|-----------------|----------------------|----------------------------------|
-| `carrierChoice`       | Carrier Choice (request)                   | string          | `DHL`, `POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint |
-| `carrierName`         | Carrier name                               | string          |                      | response only (⁷)                |
-| `finalCost`           | Final shipment cost                        | `amount` object |                      | response only (⁷)                |
-| `insuranceCost`       | Insurance finalCost                        | `amount` object |                      | response only (⁷)                |
-| `rate`                | Shipment rate to use when confirming       | `rate` object   |                      | required for confirm endpoint    |
-| `reference`           | Reference number (used in the Client area) | string          |                      | response only (⁷)                |
-| `scheduledProcessing` | Scheduled processing option                | boolean         | `true`, `false`      | (*)
-| `service`             | Shipment service choice (request)          | string          | `express`, `economy` | required for "one-step" endpoint |
-| `status`              | Shipment status code                       | integer         | `-1`, `0`, `3`       | response only                    |
-| `trackingNumber`      | Tracking number                            | string          |                      | response only (⁷)                |
+| Name                   | Description                                | Type            | Format                                | Restrictions                           |
+|------------------------|--------------------------------------------|-----------------|---------------------------------------|----------------------------------------|
+| `carrierChoice`        | Carrier Choice (request)                   | string          | `DHL`, `POSTE_ITALIANE`, `TNT`, `UPS` | Optional, used in "one-step" endpoint  |
+| `carrierName`          | Carrier name                               | string          |                                       | response only (⁷)                      |
+| `exportDeclaration`    | Export decalration                         | `exportDeclaration` object |                            | only if shipment is subject to customs |
+| `finalCost`            | Final shipment cost                        | `amount` object |                                       | response only (⁷)                      |
+| `insuranceCost`        | Insurance finalCost                        | `amount` object |                                       | response only (⁷)                      |
+| `rate`                 | Shipment rate to use when confirming       | `rate` object   |                                       | required for confirm endpoint          |
+| `reference`            | Reference number (used in the Client area) | string          |                                       | response only (⁷)                      |
+| `scheduledProcessing`  | Scheduled processing option                | boolean         | `true`, `false`                       | (*)                                    
+| `service`              | Shipment service choice (request)          | string          | `express`, `economy`                  | required for "one-step" endpoint       |
+| `status`               | Shipment status code                       | integer         | `-1`, `0`, `3`                        | response only                          |
+| `trackingNumber`       | Tracking number                            | string          |                                       | response only (⁷)                      |
 
 #### (*) `scheduledProcessing`
 

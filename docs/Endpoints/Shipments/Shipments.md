@@ -17,8 +17,6 @@ There are two options for creating shipments:
 
 Methods : `GET`, `POST`
 
-Note: if the shipment is subject to customs, the `exportDeclaration` object is required.
-
 ---
 
 ## Save shipment

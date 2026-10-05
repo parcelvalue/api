@@ -41,6 +41,7 @@
         }
     },
     "scripts" : {
+        "c": ["@lint", "@check:phpc", "@s:8", "@test"],
         "check": "composer lint && composer check:phpc && composer s:8 && composer test",
         "doc" : [
             "Composer\\Config::disableProcessTimeout",
